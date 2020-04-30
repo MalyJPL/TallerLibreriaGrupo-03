@@ -11,7 +11,7 @@ require(__DIR__ . '/../config/class.Conexion.php');
 /* modificar registro / solo disponibles para usuario tipo superAdmin*/
 
 
-class Administrador{
+class Registro{
 
     public function __construct(){
 
@@ -19,7 +19,7 @@ class Administrador{
     public function agregarAdmin($nombre, $apellido, $correo, $clave, $direccion, $telefono){
       $db = new Conexion(); 
       
-      $sql = "INSERT INTO registro (nombre, apellido,correo, clave, direccion, telefono) VALUES ('$nombre', '$apellido', '$correo', '$clave', '$direccion', '$telefono') ";
+      $sql = "INSERT INTO registro (nombre, apellido, correo, clave, direccion, telefono, idTipoAdmin, idEstado ) VALUES ('$nombre', '$apellido', '$correo', '$clave', '$direccion', '$telefono' ,'2', '1') ";
 
       $db->query($sql) ? header('Location: ../index.php?res=registrado') : header('Location: ../index.php?res=error'); 
     }

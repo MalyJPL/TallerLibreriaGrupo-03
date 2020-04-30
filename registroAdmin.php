@@ -24,7 +24,9 @@
 </form>
   </div>  
 
+<div id="nombreUsuario">
 
+</div>
 
 
 

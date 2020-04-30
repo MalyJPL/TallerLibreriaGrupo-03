@@ -27,7 +27,7 @@ break;
 }
 
 function registrar(){
-   $admin = new Administrador();  
+   $admin = new Registro();  
 
    $nombre = $_POST['nombre'];
    $apellido = $_POST['apellido'];
@@ -36,12 +36,13 @@ function registrar(){
    $direccion = $_POST['direccion'];
    $telefono = $_POST['telefono'];
 
-   $admin->agregarUsuario($nombre, $apellido, $correo, $clave, $direccion, $telefono);
+   $admin->agregarAdmin($nombre, $apellido, $correo, $clave, $direccion, $telefono);
 
 }
 
+
 function ingresar(){
-    $admin = new Administrador();
+    $admin = new Registro();
     
     $correo = $_POST['correo'];
     $clave = $_POST['clave'];
