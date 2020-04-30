@@ -81,13 +81,11 @@ body {
 /*----------------------------------------*/
 .header-logo > a {
   display: block;
-  padding: -125px 0;
-
-padding-left: 130px;
 padding-bottom: 20px;
 animation: 0.8s ease-in-out 1.2s normal backwards 1 running fadeInUp;
-
 }
+
+
 .mainmenu nav ul#nav li {
   display: inline-block;
   line-height: 1;
@@ -208,11 +206,9 @@ animation: 0.8s ease-in-out 1.2s normal backwards 1 running fadeInUp;
   line-height: 50px;
   padding-left: 20px;
   position: relative;
-  width: 40%;
+  width: 100%;
 }
-.layer-4 {
-  margin-top: 77px;
-}
+
 .layer-4 form.title-4 button {
   background: #40acd7 none repeat scroll 0 0;
   border-color:#40acd7;
@@ -227,8 +223,21 @@ animation: 0.8s ease-in-out 1.2s normal backwards 1 running fadeInUp;
 }
 .layer-4 form {
   animation: 0.8s ease-in-out 2.4s normal backwards 1 running fadeInUp;
+margin-left: 15%;
 }
 
+
+
+.search {
+
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+justify-content: space-between;
+
+
+
+ }
 
 /*----------------------------------------*/
 /*  4.	Banner  CSS
