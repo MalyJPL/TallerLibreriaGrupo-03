@@ -1,4 +1,150 @@
-/* index */
+/* index camilo */
 h5{
     font-weight: 400;
 }
+
+
+
+
+/*----------------------------------------*/
+/*  Richard CSS INICIO
+/*----------------------------------------*/
+
+
+*----------------------------------------*/
+/*  11.	Footer  CSS
+/*----------------------------------------*/
+.footer-top-area {
+  background: #333333 none repeat scroll 0 0;
+  color: #d4d4d4;
+  padding: 35px 0;
+}
+.footer-left img {
+  padding-bottom: 30px;
+}
+.footer-contact li i {
+  margin-right: 18px;
+}
+.footer-contact li i {
+  font-size: 16px;
+  margin-right: 10px;
+}
+.footer-contact > li {
+  line-height: 1;
+  margin-bottom: 25px;
+}
+.footer-contact > li:last-child {
+  margin-bottom: 0;
+}
+.footer-list li a::before {
+  background: #d1d1d1 none repeat scroll 0 0;
+  border-radius: 50%;
+  content: "";
+  height: 5px;
+  left: -10px;
+  position: absolute;
+  top: 8px;
+  transition: all 0.3s ease 0s;
+  width: 5px;
+}
+.footer-list li a {
+  color: #d4d4d4;
+  font-size: 13px;
+  position: relative;
+}
+.footer-list li:hover a::before {
+  background: #32b5f3 none repeat scroll 0 0;
+}
+.footer-list > li {
+  line-height: 1;
+  margin-bottom: 22px;
+}
+.footer-list > li:last-child {
+  margin-bottom: 0;
+}
+.single-footer {
+  padding-top: 45px;
+}
+.footer-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.single-footer.footer-newsletter input {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border-color: -moz-use-text-color -moz-use-text-color #ffffff;
+  border-image: none;
+  border-style: none none solid;
+  border-width: medium medium 1px;
+  padding-bottom: 5px;
+  padding-left: 25px;
+  width: 100%;
+}
+.single-footer.footer-newsletter > form {
+  margin-bottom: 38px;
+  overflow: hidden;
+  position: relative;
+}
+.single-footer.footer-newsletter > form i {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.btn-small {
+  font-size: 12px;
+  height: 25px;
+  line-height: 25px;
+}
+.single-footer.footer-newsletter div {
+  margin-bottom: 10px;
+}
+.social-icon a {
+  background: #d4d4d4 none repeat scroll 0 0;
+  border-radius: 50%;
+  color: #444444;
+  display: block;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  width: 38px;
+}
+.social-icon > li {
+  display: inline-block;
+  margin-right: 16px;
+}
+.social-icon > li:last-child {
+  margin-right: 0;
+}
+.social-icon a:hover {
+  background: #32b5f3 none repeat scroll 0 0;
+  color: #ffffff;
+}
+
+*----------------------------------------*/
+/*  12.	Footer Bottom  CSS
+/*----------------------------------------*/
+.footer-bottom {
+  background: #242424 none repeat scroll 0 0;
+  color: #ffffff;
+}
+.footer-bottom {
+    background: #242424 none repeat scroll 0 0;
+    color: #ffffff;
+    line-height: 1;
+    padding: 25px 0;
+}
+.footer-bottom-left > p {
+    margin: 6px 0 0;
+}
+.footer-bottom-left a {
+    color: #ffffff;
+    font-weight: 600;
+}
+.footer-bottom-left a:hover {
+  color: #32b5f3;
+}
+/*----------------------------------------*/
