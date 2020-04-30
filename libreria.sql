@@ -14,6 +14,7 @@ CREATE TABLE registro(
     nombre        VARCHAR(255),
     apellido      VARCHAR(255),
     correo        VARCHAR(255),
+    clave         VARCHAR(255),
     direccion     VARCHAR(255),
     telefono      VARCHAR(255),
     idTipoAdmin   INT NOT NULL,
@@ -53,8 +54,8 @@ CREATE TABLE categoriaEdad(
 
 INSERT INTO estado (estado) VALUES ('Activo/Existente'), ('Inactivo/Inexistente');
 
-INSERT INTO registro (nombre, apellido, correo, direccion, telefono, idTipoAdmin, idEstado) VALUES ('Hector','Herrera', 'hector@gmail.com', 'Cra.5 #34-12','3125442367', 1, 1), 
-('Juana','Lopez', 'juana@gmail.com', 'Calle. 65 #84-56','3005487367', 2, 1), ('Oscar','Mendoza', 'oscar@gmail.com', 'Av.30 #12-96','3045994262', 2, 1) ;
+INSERT INTO registro (nombre, apellido, correo, clave, direccion, telefono, idTipoAdmin, idEstado) VALUES ('Hector','Herrera', 'hector@gmail.com', '123', 'Cra.5 #34-12','3125442367', 1, 1), 
+('Juana','Lopez', 'juana@gmail.com', '1234', 'Calle. 65 #84-56','3005487367', 2, 1), ('Oscar','Mendoza', 'oscar@gmail.com', '12345', 'Av.30 #12-96','3045994262', 2, 1) ;
 
 INSERT INTO tipoAdmin (tipo) VALUES ('Super administrador'), ('Administrador');
 
