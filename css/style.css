@@ -1018,3 +1018,19 @@ p.form-row-phone {
 #scrollUp i {
   line-height: 40px;
 }
+
+/* PAGINA REGISTRO DE PRODUCTOS */
+
+
+#productos-modificar{
+  display: none;
+}
+#registrar-p{
+  background: #40acd7;
+}
+#productos-registro{
+  margin: auto;
+}
+button.submit{
+  background:#40acd7 ;
+}
