@@ -1,6 +1,6 @@
 <?php
 
-require(__DIR__ . '/../modelo/class.Contacto.php'); 
+require(__DIR__ . '/../modelo/class.Producto.php'); 
 
 
 //listar todos los productos

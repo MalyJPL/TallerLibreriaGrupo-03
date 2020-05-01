@@ -1,6 +1,6 @@
 <?php
 
-require(__DIR__ . '/../modelo/class.Contacto.php'); 
+require(__DIR__ . '/../modelo/class.Registro.php'); 
 
 
 //listar todos los usuarios
@@ -23,6 +23,9 @@ case 'ingresar':
     break;
 case 'salir':
     salir();
+break;
+case 'modificar':
+    modificar();
 break;
 }
 
@@ -47,13 +50,15 @@ function ingresar(){
     $correo = $_POST['correo'];
     $clave = $_POST['clave'];
     
-    $result = $admin->iniciarSesion($correo, $clave);
+    $result = $admin->ingresar($correo, $clave);
     
     if($result != 'error'){
     session_start(); 
     $_SESSION['loggedin'] = true; 
     $_SESSION['user'] = $result; 
     
+echo 'ingrese';
+
     header('Location: ../perfil.php');
     } else {
         echo 'Tus datos no son validos';
@@ -65,7 +70,22 @@ function ingresar(){
         header('Location: ../index.php');
     }
     
-    
+    function modificar(){
+        $admin= new Registro();
+
+$id = $_POST['idRegistro'];
+$nombre = $_POST['nombre'];
+$apellido = $_POST['apellido'];
+$correo = $_POST['correo'];
+$clave = $_POST['clave'];
+$direccion = $_POST['direccion'];
+$telefono = $_POST['telefono'];
+
+$admin->modificarAdmin($id, $nombre, $apellido, $correo, $clave, $direccion, $telefono);
+
+
+            
+    }
 
 
 ?>

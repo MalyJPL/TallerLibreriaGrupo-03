@@ -95,7 +95,18 @@
                                 </li>
                                 <li><a href="contact.html">CONTÁCTENOS</a></li>
 
-                                <li><a href="ingresar.html">INGRESAR</a></li>
+                                <li><a href="ingresar.html">INGRESAR</a>
+                                    <div id="ingresar">
+                                        <form method="POST" action="control/registroControl.php?accion=ingresar ">
+                                            <input type="text" name="correo" id="correo" placeholder="Email" />
+                                            <br>
+                                            <input type="password" name="clave" id="clave"
+                                                placeholder="Contraseña" />
+                                            <br>
+                                            <input type="submit" value="Iniciar Sesion" name="enter" />
+                                        </form>
+                                    </div>
+                                </li>
 
                                 <li><a href="registrar.html">REGISTRAR</a></li>
 
@@ -128,7 +139,7 @@
 
         <div class="row">
 
-       
+
 
             <div class="col-lg-12">
 
@@ -195,7 +206,7 @@
                                 <h5>Autor: Aitziber Lopez</h5>
                                 <h5>Edad: 8 a 12 años</h5>
                                 <h5>Tema: imaginacion</h5>
-                                
+
                             </div>
                             <div class="card-footer">
                                 <h5 class="text-muted">Precio $102.248</h5>
@@ -214,7 +225,7 @@
                                 <h5>Autor: afdasd</h5>
                                 <h5>Edad: 6 a 8 años</h5>
                                 <h5>Tema: Imaginación</h5>
-                                
+
                             </div>
                             <div class="card-footer">
                                 <h5 class="text-muted">Precio $37.500</h5>
@@ -233,7 +244,7 @@
                                 <h5>Autor: Cristina Tébar Montes</h5>
                                 <h5>Edad: 6 a 8 años</h5>
                                 <h5>Tema: Imaginación</h5>
-                               
+
                             </div>
                             <div class="card-footer">
                                 <h5 class="text-muted">Precio $ 110.952</h5>
@@ -251,9 +262,9 @@
                                     <a href="#">Descubro los Arboles</a>
                                 </h4>
                                 <h5>Autor: Claire Lecoeuvre </h5>
-                                <h5>Edad:  3 a 6 años</h5>
+                                <h5>Edad: 3 a 6 años</h5>
                                 <h5>Tema: Naturalista</h5>
-                                
+
                             </div>
                             <div class="card-footer">
                                 <h5 class="text-muted">Precio $62.000</h5>
@@ -270,9 +281,9 @@
                                     <a href="#">EL PRINCIPITO</a>
                                 </h4>
                                 <h5>Autor: Antoine de Saint-Exupéry </h5>
-                                <h5>Edad:  8 a 12 años</h5>
+                                <h5>Edad: 8 a 12 años</h5>
                                 <h5>Tema: Imaginación</h5>
-                               
+
                             </div>
                             <div class="card-footer">
                                 <h5 class="text-muted">Precio $ 53.095</h5>
@@ -287,12 +298,12 @@
                                     alt="Recomendado 6"></a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                <a href="#">El Dragón Color Frambuesa</a>
+                                    <a href="#">El Dragón Color Frambuesa</a>
                                 </h4>
                                 <h5>Autor: Georg Bydlinski </h5>
-                                <h5>Edad:  3 a 6 años</h5>
+                                <h5>Edad: 3 a 6 años</h5>
                                 <h5>Tema: Imaginación</h5>
-                               
+
                             </div>
                             <div class="card-footer">
                                 <h5 class="text-muted">Precio $ 73.095</h5>
@@ -302,16 +313,16 @@
                     </div>
 
                 </div>
-                
+
 
             </div>
-           
+
 
         </div>
-        
+
 
     </div>
-   
+
 
 
     <!-- ----------------Termina Camilo ------------------------- -->

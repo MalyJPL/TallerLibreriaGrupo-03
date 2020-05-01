@@ -38,8 +38,15 @@ class Registro{
           return 'error';  
       }
 
+    }  
+    public function modificarAdmin($id, $nombre, $apellido, $correo, $clave, $direccion, $telefono){
+      $db = new Conexion();
+      $sql = "UPDATE `registro` SET `nombre`='$nombre',`apellido`='$apellido',`correo`='$correo',`clave`='$clave',`direccion`='$direccion',`telefono`='$telefono' WHERE `idRegistro`='$id' ";
+      $db->query($sql) ? header('Location: ../perfil.php?res=modificado') : header('Location: ../perfil.php?res=error'); 
+
     }
 }
+
 
 
 ?>
