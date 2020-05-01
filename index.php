@@ -74,7 +74,7 @@
 
                                 <li><a href="#">Por tema</a>
                                     <ul class="sub-menu">
-                                        <li><a href="sociales.html">Social y valores </a></li>
+                                        <li><a onclick="ocultarHome()" href="productoControl.php?mostrarCategoria='Social y valores'">Social y valores </a></li>
                                         <li><a href="fantasia.html">Fantasía </a></li>
                                         <li><a href="imaginacion.html">Imaginación </a></li>
                                         <li><a href="pensamiento.html">Pensamiento lógico </a></li>
@@ -124,12 +124,12 @@
 
 
     <!-- contenido -->
-    <div class="container">
+    <div id="home">
+    <div  class="container">
 
         <div class="row">
 
        
-
             <div class="col-lg-12">
 
                 <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
@@ -327,6 +327,7 @@
             </div>
 
         </div>
+    </div>
     </div>
 
     <!-- Footer  -->

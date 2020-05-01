@@ -14,6 +14,9 @@
     <!-- carrusel con otros productos de la misma categoria -->
 
     <!-- FOOTER-->
+
+
+
     
 </body>
 </html>

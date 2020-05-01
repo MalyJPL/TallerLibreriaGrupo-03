@@ -28,3 +28,13 @@ function modProducto() {
     xx.style.color = "#444444";
     x.style.display = "none";
 }
+
+/* Funciones maly */
+
+//ocultar el home: banner y recomendados - cuando se haya seleccionado categoria
+function ocultarHome(){
+document.getElementById('home').style.display='none';
+
+}
+
+ /* Terminan funciones maly */

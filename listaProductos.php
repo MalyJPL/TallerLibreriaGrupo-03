@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -140,57 +142,56 @@
 
     </div>
     <div class="row my-4 mx-auto" id="productos-registro">
-      <form class="mx-auto">
+        <form class="mx-auto" method="POST" action="control/productoControl.php?accion=registrar">  <!-- action y method agregado por Maly , junto con value-->
         <div class="col-sm-12">
           <div class="row">
             <div class="col-sm-6 form-group">
               <label>Titulo</label>
-              <input type="text" placeholder="Ingrese el titulo" class="form-control">
+              <input type="text" name="nombreLib" id="nombreLib" placeholder="Ingrese el titulo" class="form-control">
             </div>
             <div class="col-sm-6 form-group">
               <label>Autor</label>
-              <input type="text" placeholder="Ingrese el autor" class="form-control">
+              <input type="text" name="autor" id="autor" placeholder="Ingrese el autor" class="form-control">
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6 form-group">
               <label>Rango de Edad</label>
-              <select type="text" placeholder="Ingrese el titulo" class="form-control">
-                <option>0 a 2 años</option>
-                <option>3 a 6 años</option>
-                <option>6 a 8 años</option>
-                <option>8 a 12 años</option>
-              </select>
+              <select type="text" name="categoriaEdad" id="categoriaEdad" class="form-control">
+                <option value="0-2 años">0 a 2 años</option>
+                <option value="3-6 años">3 a 6 años</option>
+                <option value="6-8 años">6 a 8 años</option>
+                <option value="8-12 años">8 a 12 años</option>
+                              </select>
             </div>
             <div class="col-sm-6 form-group">
               <label>Tema</label>
-              <select type="text" placeholder="Ingrese el autor" class="form-control">
-                <option>Social y valores</option>
-                <option>Fantasia</option>
-                <option>Imaginación</option>
-                <option>Pensamiento Lógico</option>
-                <option>Naturalista</option>
-                <option>Lenguaje</option>
-              </select>
+              <select type="text"  name="categoriaTema" id="categoriaTema" class="form-control">
+                <option value='Social y valores'>Social y valores</option>
+                <option value='Fantasia'>Fantasia</option>
+                <option value='Imaginacion'>Imaginación</option>
+                <option value='Pensamiento logico'>Pensamiento Lógico</option>
+                <option value='Naturalista'>Naturalista</option>
+                <option value='Lenguaje'> Lenguaje</option>
+                  </select>
             </div>
           </div>
           <div class="form-group">
             <label>Descripción</label>
-            <textarea placeholder="Ingrese la descripción del libro" rows="3" class="form-control"></textarea>
+            <textarea name="descripcion" id="descripcion" placeholder="Ingrese la descripción del libro" rows="3" class="form-control"></textarea>
           </div>
           <div class="row">
             <div class="col-sm-6 form-group">
               <label>Precio</label>
-              <input type="number" placeholder="Ingrese el precio" class="form-control">
+              <input name="precio" id="precio" type="number" placeholder="Ingrese el precio" class="form-control">
             </div>
             <div class="col-sm-6 form-group">
               <label>Imagen</label>
-              <input type="file" placeholder="Ingrese el autor" class="form-control-file" accept="image/*">
+              <input name="imagen" id="imagen" type="file"class="form-control-file" accept="image/*">
             </div>
           </div>
-
           <button type="button" class="btn btn-lg submit" style="background: #40acd7 ">Submit</button>
-        </div>
+              </div>
       </form>
     </div>
 

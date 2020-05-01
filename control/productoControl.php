@@ -2,6 +2,9 @@
 
 require(__DIR__ . '/../modelo/class.Contacto.php'); 
 
+$categoria = $GET_('buscarCategoria');
+
+mostrarCategoria
 
 //listar todos los productos
 

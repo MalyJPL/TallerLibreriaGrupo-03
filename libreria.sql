@@ -79,7 +79,7 @@ Pero tiene problemas con la flor y empieza a experimentar la soledad. Hasta que 
 habitados sucesivamente por un rey, un vanidoso, un borracho, un hombre de negocios, un farolero, un geógrafo. El concepto de seriedad que tienen estas personas mayores lo deja 
 perplejo y confuso.', 'files/el_principito.png', 2, 2, 1 ,1); 
 
-INSERT INTO categoriaTema (tema, idEstado) VALUES ('Fantasia', 1), ('Imaginacion', 1), ('Pensamiento logico', 1), ('Social y valores', 1);
+INSERT INTO categoriaTema (tema, idEstado) VALUES ('Fantasia', 1), ('Imaginacion', 1), ('Pensamiento logico', 1), ('Social y valores', 1), ('Naturalista', 1), ('Lenguaje', 1);
 
 INSERT INTO categoriaEdad (edad, idEstado) VALUES ('0-2 años', 1), ('3-6 años', 1), ('6-8 años', 1), ('8-12 años', 1);
 
