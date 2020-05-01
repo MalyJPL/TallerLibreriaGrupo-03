@@ -35,7 +35,8 @@
     <link rel="stylesheet" href="style.css">
     <!-- responsive css -->
     <link rel="stylesheet" href="css/responsive.css">
-
+<!-- iconos css -->
+<link rel="stylesheet" href="css/iconos.css">
 
     <!-- ------------RIC   fin   ---- -->
 
@@ -108,18 +109,35 @@
                                     </div>
                                 </li>
 
-                                <li><a href="registrar.html">REGISTRAR</a></li>
-
-
+                                <li><a id="registro" href="#">REGISTRAR</a>
+                                <ul class="sub-menu">
+                                <div id="registroAdmin">
+                                    <form method="POST" action="control/registroControl.php?accion=registrar">
+                                    <input type="text" name="nombre" id="nombre" placeholder="Nombre"/>
+                                    <br>
+                                    <input type="text" name="apellido" id="apellido" placeholder="Apellido"/>
+                                    <br>
+                                    <input type="text" name="correo" id="correo" placeholder="Correo"/>
+                                    <br>
+                                    <input type="password" name="clave" id="clave" placeholder="Contraseña"/>
+                                    <br>
+                                    <input type="text" name="direccion" id="direccion" placeholder="Direccion"/>
+                                    <br>
+                                    <input type="text" name="telefono" id="telefono" placeholder="Telefono"/>
+                                    <br>
+                                    <input type="submit" value="Registrar" id="registrarbtn"  name="registrar" />
+                                    </form>
+                                    </div>  
+                                    </ul>
+                                </li>
                                 <li><a href="#">PERFIL </a>
                                     <ul class="sub-menu">
                                         <li><a href="sociales.html">Modificar usuarios</a></li>
                                         <li><a href="fantasia.html">Mis productos </a></li>
                                         <li><a href="imaginacion.html">Mi perfil</a></li>
-                                    </ul>
-                                </li>
-
-                                <li><a href="ingresar.html">CERRAR SESIÓN </a></li>
+                                <?php
+                                include __DIR__ . 'navAdmin.php';
+                                ?>
                             </ul>
                         </nav>
                     </div>
@@ -416,7 +434,7 @@
                                 <div>
                                     <input type="text" placeholder="email ">
                                 </div>
-                                <button class="btn btn-search btn-small" type="submit">SUBSCRIBE</button>
+                                <button class="btn btn-search btn-small" type="submit">SUBSCRIBETE</button>
                                 <i class="flaticon-networking"></i>
                             </form>
                             <ul class="social-icon">
@@ -462,6 +480,10 @@
     </footer>
     <!-- Footer fin -->
 
+
+    <!-- js y jquery interno -->
+    <script src="js/javascript.js">
+    </script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
