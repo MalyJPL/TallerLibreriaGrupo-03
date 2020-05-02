@@ -165,6 +165,29 @@ animation: 0.8s ease-in-out 1.2s normal backwards 1 running fadeInUp;
 }
 
 
+nav #registroAdmin input{
+background-color: #fffefe;
+margin-bottom: 10px;
+width: 240px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+#registrarbtn{
+ -moz-background:background-color 1s;
+  }
+
+  
+#registrarbtn:hover{
+  background-color: #32b6f4;
+  }
+
+nav #registroAdmin{
+  display: none;
+ 
+}
+
+
 
 
 /*----------------------------------------*/
@@ -238,6 +261,7 @@ justify-content: space-between;
 
 
  }
+
 
 /*----------------------------------------*/
 /*  4.	Banner  CSS

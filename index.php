@@ -35,7 +35,8 @@
     <link rel="stylesheet" href="style.css">
     <!-- responsive css -->
     <link rel="stylesheet" href="css/responsive.css">
-
+<!-- iconos css -->
+<link rel="stylesheet" href="css/iconos.css">
 
     <!-- ------------RIC   fin   ---- -->
 
@@ -95,20 +96,45 @@
                                 </li>
                                 <li><a href="contact.html">CONTÁCTENOS</a></li>
 
-                                <li><a href="ingresar.html">INGRESAR</a></li>
-
-                                <li><a href="registrar.html">REGISTRAR</a></li>
-
-
-                                <li><a href="#">PERFIL </a>
-                                    <ul class="sub-menu">
-                                        <li><a href="sociales.html">Modificar usuarios</a></li>
-                                        <li><a href="fantasia.html">Mis productos </a></li>
-                                        <li><a href="imaginacion.html">Mi perfil</a></li>
-                                    </ul>
+                                <li><a href="ingresar.html">INGRESAR</a>
+                                    <div id="ingresar">
+                                        <form method="POST" action="control/registroControl.php?accion=ingresar ">
+                                            <input type="text" name="correo" id="correo" placeholder="Email" />
+                                            <br>
+                                            <input type="password" name="clave" id="clave"
+                                                placeholder="Contraseña" />
+                                            <br>
+                                            <input type="submit" value="Iniciar Sesion" name="enter" />
+                                        </form>
+                                    </div>
                                 </li>
 
-                                <li><a href="ingresar.html">CERRAR SESIÓN </a></li>
+                                <li><a id="registro" href="#">REGISTRAR</a>
+                                <ul class="sub-menu">
+                                <div id="registroAdmin">
+                                    <form method="POST" action="control/registroControl.php?accion=registrar">
+                                    <input type="text" name="nombre" id="nombre" placeholder="Nombre"/>
+                                    <br>
+                                    <input type="text" name="apellido" id="apellido" placeholder="Apellido"/>
+                                    <br>
+                                    <input type="text" name="correo" id="correo" placeholder="Correo"/>
+                                    <br>
+                                    <input type="password" name="clave" id="clave" placeholder="Contraseña"/>
+                                    <br>
+                                    <input type="text" name="direccion" id="direccion" placeholder="Direccion"/>
+                                    <br>
+                                    <input type="text" name="telefono" id="telefono" placeholder="Telefono"/>
+                                    <br>
+                                    <input type="submit" value="Registrar" id="registrarbtn"  name="registrar" />
+                                    </form>
+                                    </div>  
+                                    </ul>
+                                </li>
+                                <li><a href="#">PERFIL </a>
+                                    <ul class="sub-menu">
+                                        <li><a href="listaAdmins.php">Modificar usuarios</a></li>
+                                        <li><a href="listaProductos.php">Mis productos </a></li>
+                                        <li><a href="perfil.php">Mi perfil</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -125,6 +151,7 @@
 
     <!-- contenido -->
     <div id="home">
+    <div  class="container">
     <div  class="container">
 
         <div class="row">
@@ -195,7 +222,7 @@
                                 <h5>Autor: Aitziber Lopez</h5>
                                 <h5>Edad: 8 a 12 años</h5>
                                 <h5>Tema: imaginacion</h5>
-                                
+
                             </div>
                             <div class="card-footer">
                                 <h5 class="text-muted">Precio $102.248</h5>
@@ -214,7 +241,7 @@
                                 <h5>Autor: afdasd</h5>
                                 <h5>Edad: 6 a 8 años</h5>
                                 <h5>Tema: Imaginación</h5>
-                                
+
                             </div>
                             <div class="card-footer">
                                 <h5 class="text-muted">Precio $37.500</h5>
@@ -233,7 +260,7 @@
                                 <h5>Autor: Cristina Tébar Montes</h5>
                                 <h5>Edad: 6 a 8 años</h5>
                                 <h5>Tema: Imaginación</h5>
-                               
+
                             </div>
                             <div class="card-footer">
                                 <h5 class="text-muted">Precio $ 110.952</h5>
@@ -251,9 +278,9 @@
                                     <a href="#">Descubro los Arboles</a>
                                 </h4>
                                 <h5>Autor: Claire Lecoeuvre </h5>
-                                <h5>Edad:  3 a 6 años</h5>
+                                <h5>Edad: 3 a 6 años</h5>
                                 <h5>Tema: Naturalista</h5>
-                                
+
                             </div>
                             <div class="card-footer">
                                 <h5 class="text-muted">Precio $62.000</h5>
@@ -270,9 +297,9 @@
                                     <a href="#">EL PRINCIPITO</a>
                                 </h4>
                                 <h5>Autor: Antoine de Saint-Exupéry </h5>
-                                <h5>Edad:  8 a 12 años</h5>
+                                <h5>Edad: 8 a 12 años</h5>
                                 <h5>Tema: Imaginación</h5>
-                               
+
                             </div>
                             <div class="card-footer">
                                 <h5 class="text-muted">Precio $ 53.095</h5>
@@ -287,12 +314,12 @@
                                     alt="Recomendado 6"></a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                <a href="#">El Dragón Color Frambuesa</a>
+                                    <a href="#">El Dragón Color Frambuesa</a>
                                 </h4>
                                 <h5>Autor: Georg Bydlinski </h5>
-                                <h5>Edad:  3 a 6 años</h5>
+                                <h5>Edad: 3 a 6 años</h5>
                                 <h5>Tema: Imaginación</h5>
-                               
+
                             </div>
                             <div class="card-footer">
                                 <h5 class="text-muted">Precio $ 73.095</h5>
@@ -302,16 +329,16 @@
                     </div>
 
                 </div>
-                
+
 
             </div>
-           
+
 
         </div>
-        
+
 
     </div>
-   
+
 
 
     <!-- ----------------Termina Camilo ------------------------- -->
@@ -327,6 +354,7 @@
             </div>
 
         </div>
+    </div>
     </div>
     </div>
 
@@ -405,7 +433,7 @@
                             <form action="#" method="post">
                                 <div>
                                     <input type="text" placeholder="email ">
-                                </div>
+                                <button class="btn btn-search btn-small" type="submit">SUBSCRIBETE</button>
                                 <button class="btn btn-search btn-small" type="submit">SUBSCRIBE</button>
                                 <i class="flaticon-networking"></i>
                             </form>
@@ -451,6 +479,10 @@
         </div>
     </footer>
     <!-- Footer fin -->
+
+    <!-- js y jquery interno -->
+    <script src="js/javascript.js">
+    </script>
 
 
     <!-- Bootstrap core JavaScript -->
