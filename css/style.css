@@ -17,6 +17,29 @@ h5{
 /*----------------------------------------*/
 
 
+.col-lg-12{
+
+
+  padding-top: 110px;
+  
+  }
+
+  .barra{
+
+    position: fixed;
+    
+    width: 100%;
+    
+    z-index: 100;
+    background-color: white;
+    
+    
+    }
+
+
+
+
+
 
 html, body {height: 100%;}
 .floatleft {float:left}
@@ -165,12 +188,19 @@ animation: 1.8s ease-in-out 1.8s normal backwards 1 running fadeInUp;
 }
 
 
+/* Formulario registro */
+
+
+
 nav #registroAdmin input{
 background-color: #fffefe;
 margin-bottom: 10px;
-width: 240px;
+width: 200px;
 border: 1px solid #ccc;
 border-radius: 5px;
+padding: 10px;
+height: 30px;
+
 }
 
 #registrarbtn{
@@ -179,11 +209,12 @@ border-radius: 5px;
 
   
 #registrarbtn:hover{
-  background-color: #32b6f4;
+  background-color:#aaf432;
   }
 
 nav #registroAdmin{
   display: none;
+  padding-left: 15px;
  
 }
 /* Formulario ingresar */
@@ -534,11 +565,44 @@ justify-content: space-between;
   border-color: -moz-use-text-color -moz-use-text-color #ffffff;
   border-image: none;
   border-style: none none solid;
-  border-width: medium medium 1px;
+  border-width: medium medium 2px;
   padding-bottom: 5px;
   padding-left: 25px;
   width: 100%;
 }
+
+
+.er{
+
+  background-color: rgb(183, 192, 209);
+  
+  margin-bottom: 10px;
+  width: 235px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-left: 10px;
+  height: 30px;
+  
+  
+  
+  
+  }
+
+
+  .banner-title span {
+    color: #32B5F3;
+  
+  }
+
+
+
+
+
+
+
+
+
+
 .single-footer.footer-newsletter > form {
   margin-bottom: 38px;
   overflow: hidden;
