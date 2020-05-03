@@ -28,7 +28,6 @@ CREATE TABLE tipoAdmin(
 
 CREATE TABLE producto(
     idProducto        INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    producto          VARCHAR(255),
     nombre            VARCHAR(255),
     autor             VARCHAR(255),
     precio            VARCHAR(255),
@@ -59,8 +58,8 @@ INSERT INTO registro (nombre, apellido, correo, clave, direccion, telefono, idTi
 
 INSERT INTO tipoAdmin (tipo) VALUES ('Super administrador'), ('Administrador');
 
-INSERT INTO producto (producto, nombre, autor, precio, descripcion, imagen, idCategoriaEdad, idCategoriaTema, idRegistro, idEstado) VALUES 
-('Cuento infantil con ejercicios practicos','Los sonidos de la noche', 'Javier Sobrind/ Emilio urberuaga', '$49.000', 'En los sonidos de la noche de Javier Sobrind, encontrarás
+INSERT INTO producto (nombre, autor, precio, descripcion, imagen, idCategoriaEdad, idCategoriaTema, idRegistro, idEstado) VALUES 
+('Los sonidos de la noche','Javier Sobrind/ Emilio urberuaga', '$49.000', 'En los sonidos de la noche de Javier Sobrind, encontrarás
 como en una situación todos mostraron cooperar, ningún animal fue indiferente a cada sonido y todos aportaron y colaboraron. La importancia de la solidaridad, del trabajo en 
 equipo, de pensar en el bienestar de los demás y no sólo en el propio, es reflejado en este tierno cuento que mostrará a los niños la más hermosa y sencilla esencia de la vida.    
 El hábito de la lectura es algo natural, sólo basta con dedicar el tiempo necesario para que este se vuelva parte de la rutina y así ir introduciendo pequeñas sesiones de lectura
@@ -74,7 +73,7 @@ Guía para llevar a cabo la actividad sugerida.
 2 Pitillos.
 1 lista de preguntas para saber ¿Cómo cuidar un niño?
 NECESITARÁS ADEMÁS: Tijeras. Pegante.', 'files/los-sonidos-de-la-noche.jpg', 1, 3, 1 ,1), 
-('Cuento infantil','El Principito', 'Antoine De Saint-Exupéry', '$35.000', 'El Principito habita un pequeñísimo asteroide, que comparte con una flor caprichosa y tres volcanes. 
+('El Principito', 'Antoine De Saint-Exupéry', '$35.000', 'El Principito habita un pequeñísimo asteroide, que comparte con una flor caprichosa y tres volcanes. 
 Pero tiene problemas con la flor y empieza a experimentar la soledad. Hasta que decide abandonar el planeta en busca de un amigo. Buscando esa amistad recorre varios planetas, 
 habitados sucesivamente por un rey, un vanidoso, un borracho, un hombre de negocios, un farolero, un geógrafo. El concepto de seriedad que tienen estas personas mayores lo deja 
 perplejo y confuso.', 'files/el_principito.png', 2, 2, 1 ,1); 
