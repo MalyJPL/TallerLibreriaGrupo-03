@@ -2,16 +2,33 @@
 
 require(__DIR__ . '/../modelo/class.Producto.php'); 
 
-listarproductosAdmin();
+
+pruebaImpresion();
 
 /* obtener accion de registro de producto */
 $accion = $_GET['accion'];
+
 
 /* poner funciones con switch segun accion */
 switch($accion){
     case 'crearProducto':
     crearProducto();
     break;
+    case 'eliminarProducto': //usando funcion eliminar de clase producto. Tomando idProducto
+    eliminarProducto();
+    break;
+    case 'actualizarProducto'; //formulario que llena datos con datos de un producto dado el id
+    actualizarProducto();
+    case 'buscarPorCategoriaEdad': //index imprimir pero con restriccion de cateogria de edad que entra por GET
+    buscarPorCategoriaEdad();
+    break;
+    case 'buscarPorCategoriaTema': //index iprimir categoria tema
+    buscarPorCategoriaTema();
+    break;
+    case 'BuscarPorLetras': // index imprimir categoria letras
+    buscarPorLetras();
+    break;
+
 }
 
 //crear producto
@@ -40,6 +57,7 @@ $libro->crearLibro($nombreLib, $autor, $precio, $descripcion, $dirImagen, $categ
 
 //imprimir datos del usuario
 
+
 function listarProductosAdmin(){
 $contarFichas = 0;
 $producto = new Producto();
@@ -47,7 +65,7 @@ $usuario = $_GET['idRegistro'];
 
 $productos = $producto->mostrarProductos();
 
-if($results != 'error'){
+if($productos != 'error'){
       
     foreach($productos as $productoEncontrado){
 
@@ -69,7 +87,7 @@ if($results != 'error'){
                             </div>
                             <div class="row mx-0">
                             <div class="list-group col-lg-6 mx-0 p-0">
-                                <a href=" #" class="list-group-item active">Eliminar</a>
+                                <a href="control/productoControl.php?accion=eliminar&idProducto=$productoEncontrado[4]." class="list-group-item active">Eliminar</a>
                             </div>
                             <div class="list-group col-lg-6 mx-0 p-0">
                                 <a href=" #" class="list-group-item">Editar</a>
@@ -88,6 +106,27 @@ echo 'error';
 
 }
 
+
+function pruebaImpresion() {
+ echo "IMPRIME ALGO";
+
+ $producto = new Producto();
+$usuario = 1;
+
+$productos = $producto->mostrarProductos();
+
+if($productos != 'error'){
+      
+    foreach($productos as $productoEncontrado){
+
+        echo $productoEncontrado[2] . '<br>';
+    }
+}else{
+
+    echo 'error'
+}
+
+}
 
 
 // modificar producto

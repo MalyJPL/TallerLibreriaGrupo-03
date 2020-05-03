@@ -126,7 +126,7 @@ $_SESSION['user'];
         <a style="background:#40acd7" href=" #" class="list-group-item" id="registrar-p" onclick="regProducto()">Registrar Productos</a>
       </div>
       <div class="list-group col-lg-6 col-md-6">
-        <a href="#" class="list-group-item" id="modificar-p" onclick="modProducto()">Editar Productos</a>
+        <a href="#" class="list-group-item" id="modificar-p" onclick="modProducto()" action='control/productoControl.php?accion=crearProducto&idRegistro=<?php echo $_SESSION['user']['idRegistro'];?>'>Editar Productos</a>
       </div>
 
     </div>
@@ -195,8 +195,9 @@ $_SESSION['user'];
         </div>
       </form>
     </div>
-    <div class="row" id="productos-modificar">
-      <div class="col-lg-12">
+
+     <div class="row" id="productos-modificar">
+<!--       <div class="col-lg-12">
 
         <div class="row my-4">
 
@@ -326,9 +327,13 @@ $_SESSION['user'];
         </div>
 
       </div>
+ -->
+ <?php
+include __DIR__ . '/control/productoControl.php'; 
+?>
+
 
     </div>
-
     <!-- termina formulario de nuevos productos -->
 
   </div>
@@ -339,21 +344,6 @@ $_SESSION['user'];
   <!-- ----------------Termina Camilo ------------------------- -->
 
   <!-- Para incluir la lista de productos según la base de datos -->
-
-  <div class="row" id="productos-modificar">
-    <div class="col-lg-12">
-      <?php
-      include __DIR__ . '/control/productoControl.php?id=' . $_SESSION['user']['idRegistro']; ?>;
-
-    </div>
-
-  </div>
-
-
-
-
-
-
 
 
   <!-- Banner Area inicio -->
