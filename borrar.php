@@ -352,16 +352,16 @@ $_SESSION['user'];
   <!-- ----------------Termina Camilo ------------------------- -->
 
   <!-- Para incluir la lista de productos según la base de datos -->
-  
-<div class="row" id="productos-modificar">
-      <div class="col-lg-12">
-        <?php 
-include __DIR__ . '/control/productoControl.php?id='. $_SESSION['user']['idRegistro']; ?>; 
-          
-      </div>
-      
+
+  <div class="row" id="productos-modificar">
+    <div class="col-lg-12">
+      <?php
+      include __DIR__ . '/control/productoControl.php?id=' . $_SESSION['user']['idRegistro']; ?>;
+
     </div>
-      
+
+  </div>
+
 
 
 
