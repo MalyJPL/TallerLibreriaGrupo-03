@@ -1058,3 +1058,47 @@ p.form-row-phone {
 button.submit{
   background:#40acd7 ;
 }
+
+
+
+/* PAGINA PERFIL.PHP  ---ANGIE--- */
+
+
+
+#modificarAdmin{
+  text-align: center;
+}
+
+#bienvenido{
+  font-size: 25px;
+}
+
+#espacioDatos{
+  margin: auto;
+  font-size: 17px;
+}
+
+#perfilTitulo{
+margin-left: 30%;
+  color: black;
+  border-radius: 7px;
+  font-size: 30px;
+  padding: 7px;
+ 
+
+  
+}
+
+
+#contenedorPerfil{
+  text-align: center;
+}
+
+#modificarBoton{
+  color: black;
+}
+
+#cerrarSesion{
+  color: black;
+  margin-left: 44.5%;
+}
