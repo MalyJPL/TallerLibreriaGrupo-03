@@ -59,7 +59,7 @@ INSERT INTO registro (nombre, apellido, correo, clave, direccion, telefono, idTi
 INSERT INTO tipoAdmin (tipo) VALUES ('Super administrador'), ('Administrador');
 
 INSERT INTO producto (nombre, autor, precio, descripcion, imagen, idCategoriaEdad, idCategoriaTema, idRegistro, idEstado) VALUES 
-('Los sonidos de la noche', 'Javier Sobrind/ Emilio urberuaga', '$49.000', 'En los sonidos de la noche de Javier Sobrind, encontrarás
+('Los sonidos de la noche','Javier Sobrind/ Emilio urberuaga', '$49.000', 'En los sonidos de la noche de Javier Sobrind, encontrarás
 como en una situación todos mostraron cooperar, ningún animal fue indiferente a cada sonido y todos aportaron y colaboraron. La importancia de la solidaridad, del trabajo en 
 equipo, de pensar en el bienestar de los demás y no sólo en el propio, es reflejado en este tierno cuento que mostrará a los niños la más hermosa y sencilla esencia de la vida.    
 El hábito de la lectura es algo natural, sólo basta con dedicar el tiempo necesario para que este se vuelva parte de la rutina y así ir introduciendo pequeñas sesiones de lectura
@@ -78,7 +78,7 @@ Pero tiene problemas con la flor y empieza a experimentar la soledad. Hasta que 
 habitados sucesivamente por un rey, un vanidoso, un borracho, un hombre de negocios, un farolero, un geógrafo. El concepto de seriedad que tienen estas personas mayores lo deja 
 perplejo y confuso.', 'files/el_principito.png', 2, 2, 1 ,1); 
 
-INSERT INTO categoriaTema (tema, idEstado) VALUES ('Fantasia', 1), ('Imaginacion', 1), ('Pensamiento logico', 1), ('Social y valores', 1), ('Naturalista', 1), ('Lenguaje', 1);
+INSERT INTO categoriaTema (tema, idEstado) VALUES ('Fantasia', 1), ('Imaginacion', 1), ('Pensamiento logico', 1), ('Social y valores', 1);
 
 INSERT INTO categoriaEdad (edad, idEstado) VALUES ('0-2 años', 1), ('3-6 años', 1), ('6-8 años', 1), ('8-12 años', 1);
 

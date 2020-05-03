@@ -16,11 +16,7 @@ h5{
 /*  1. CSS Richard
 /*----------------------------------------*/
 
-.col-lg-12{
 
-padding-top: 110px;
-
-}
 
 html, body {height: 100%;}
 .floatleft {float:left}
@@ -83,21 +79,6 @@ body {
 /*----------------------------------------*/
 /*  2.	Header  CSS
 /*----------------------------------------*/
-
-
-
-.barra{
-
-position: fixed;
-
-width: 100%;
-
-z-index: 100;
-background-color: white;
-
-
-}
-
 .header-logo > a {
   display: block;
 padding-bottom: 20px;
@@ -184,68 +165,27 @@ animation: 0.8s ease-in-out 1.2s normal backwards 1 running fadeInUp;
 }
 
 
-/* Formulario registro */
-
-
 nav #registroAdmin input{
 background-color: #fffefe;
 margin-bottom: 10px;
-width: 200px;
+width: 240px;
 border: 1px solid #ccc;
 border-radius: 5px;
-padding-left: 10px;
-height: 30px;
 }
 
 #registrarbtn{
  -moz-background:background-color 1s;
-
   }
 
   
 #registrarbtn:hover{
-  background-color: #aaf432;
-
- 
+  background-color: #32b6f4;
   }
 
 nav #registroAdmin{
   display: none;
-  padding-left: 15px;
  
 }
-
-
-  /* nav #ingresar2 input{
-  background-color: #fffefe;
-  margin-bottom: 10px;
-  width: 200px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding-left: 10px;
-  height: 30px;
-  }
-  
-  #ingresarbtn{
-   -moz-background:background-color 1s;
-  
-    }
-  
-    
-  #ingresarbtn:hover{
-    background-color: #aaf432;
-  
-  
-    }
-  
-  nav #ingresar2{
-    display: none;
-    padding-left: 15px;
-   
-  }   */
-
-
-
 
 
 
@@ -556,10 +496,6 @@ justify-content: space-between;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 25px;
-
-
-
-  
 }
 .single-footer.footer-newsletter input {
   -moz-border-bottom-colors: none;
@@ -570,30 +506,11 @@ justify-content: space-between;
   border-color: -moz-use-text-color -moz-use-text-color #ffffff;
   border-image: none;
   border-style: none none solid;
-  border-width: medium medium 2px;
+  border-width: medium medium 1px;
   padding-bottom: 5px;
   padding-left: 25px;
   width: 100%;
 }
-
-.er{
-
-background-color: rgb(183, 192, 209);
-
-margin-bottom: 10px;
-width: 235px;
-border: 1px solid #ccc;
-border-radius: 5px;
-padding-left: 10px;
-height: 30px;
-
-
-
-
-}
-
-
-
 .single-footer.footer-newsletter > form {
   margin-bottom: 38px;
   overflow: hidden;
@@ -655,16 +572,7 @@ height: 30px;
 }
 .footer-bottom-left a:hover {
   color: #32b5f3;
-  
 }
-
-.banner-title span {
-  color: #32B5F3;
-
-}
-
-
-
 /*----------------------------------------*/
 /*  13.	
 /*----------------------------------------*/
@@ -1149,4 +1057,48 @@ p.form-row-phone {
 }
 button.submit{
   background:#40acd7 ;
+}
+
+
+
+/* PAGINA PERFIL.PHP  ---ANGIE--- */
+
+
+
+#modificarAdmin{
+  text-align: center;
+}
+
+#bienvenido{
+  font-size: 25px;
+}
+
+#espacioDatos{
+  margin: auto;
+  font-size: 17px;
+}
+
+#perfilTitulo{
+margin-left: 30%;
+  color: black;
+  border-radius: 7px;
+  font-size: 30px;
+  padding: 7px;
+ 
+
+  
+}
+
+
+#contenedorPerfil{
+  text-align: center;
+}
+
+#modificarBoton{
+  color: black;
+}
+
+#cerrarSesion{
+  color: black;
+  margin-left: 44.5%;
 }

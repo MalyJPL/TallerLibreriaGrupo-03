@@ -22,11 +22,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!--  styles  Camilo -->
+    <!-- Custom styles for this template Camilo -->
     <link href="css/shop-homepage.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-   
-  
     <!-- ------------fin ---- -->
 
     <!-- ------------RIC   inicio ---- -->
@@ -38,7 +36,7 @@
     <!-- responsive css -->
     <link rel="stylesheet" href="css/responsive.css">
 <!-- iconos css -->
-<link rel="stylesheet" href="css/fontello.css">
+<link rel="stylesheet" href="css/iconos.css">
 
     <!-- ------------RIC   fin   ---- -->
 
@@ -50,8 +48,7 @@
 <body>
 
     <!--Header inicio-->
-
-    <div  class="barra">
+    <div class="header-area">
         <div class="container">
             <div class="row">
                 <div class="search">
@@ -72,13 +69,13 @@
                     <div class="mainmenu">
                         <nav>
                             <ul id="nav">
-                                <li><a class="icon-ok"  href="index.html">INICIO</a></li>
+                                <li><a href="index.html">INICIO</a></li>
 
                                 <!-- get -->
 
                                 <li><a href="#">Por tema</a>
                                     <ul class="sub-menu">
-                                        <li><a onclick="ocultarHome()" href="productoControl.php?mostrarCategoria='Social y valores'">Social y valores </a></li>
+                                        <li><a href="sociales.html">Social y valores </a></li>
                                         <li><a href="fantasia.html">Fantasía </a></li>
                                         <li><a href="imaginacion.html">Imaginación </a></li>
                                         <li><a href="pensamiento.html">Pensamiento lógico </a></li>
@@ -99,19 +96,17 @@
                                 </li>
                                 <li><a href="contact.html">CONTÁCTENOS</a></li>
 
-                                <li><a id="ingreso" href="#">INGRESAR</a>
-                                <ul class="sub-menu">
-                                    <div id="ingresar2">
+                                <li><a href="ingresar.html">INGRESAR</a>
+                                    <div id="ingresar">
                                         <form method="POST" action="control/registroControl.php?accion=ingresar ">
-
                                             <input type="text" name="correo" id="correo" placeholder="Email" />
                                             <br>
-                                            <input type="password" name="clave" id="clave" placeholder="Contraseña" />
+                                            <input type="password" name="clave" id="clave"
+                                                placeholder="Contraseña" />
                                             <br>
-                                            <input  type="submit" value="Iniciar Sesion" id="ingresarbtn" name="enter" />
+                                            <input type="submit" value="Iniciar Sesion" name="enter" />
                                         </form>
                                     </div>
-                                    </ul>
                                 </li>
 
                                 <li><a id="registro" href="#">REGISTRAR</a>
@@ -137,9 +132,12 @@
                                 </li>
                                 <li><a href="#">PERFIL </a>
                                     <ul class="sub-menu">
-                                        <li><a href="listaAdmins.php">Modificar usuarios</a></li>
-                                        <li><a href="listaProductos.php">Mis productos </a></li>
-                                        <li><a href="perfil.php">Mi perfil</a></li>
+                                        <li><a href="sociales.html">Modificar usuarios</a></li>
+                                        <li><a href="fantasia.html">Mis productos </a></li>
+                                        <li><a href="imaginacion.html">Mi perfil</a></li>
+                                <?php
+                                include __DIR__ . 'navAdmin.php';
+                                ?>
                             </ul>
                         </nav>
                     </div>
@@ -155,13 +153,12 @@
 
 
     <!-- contenido -->
-    <div id="home">
-    <div  class="container">
-    <div  class="container">
+    <div class="container">
 
         <div class="row">
 
-       
+
+
             <div class="col-lg-12">
 
                 <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
@@ -353,13 +350,12 @@
         <div class="container">
             <div class="banner-title text-center">
                 <h2>TIENDA DE LIBROS <span>EN LÍNEA </span></h2>
-                <p class="flaticon-shop"> Comprar libros online al mejor precio 2020 es más fácil que nunca. También te puede interesar ver libros recomendados, las novedades del último mes, de la última semana, los próximos lanzamientos, o nuestra página de eBooks o libros digitales. </p>
+                <p class="flaticon-shop"> Nuestra tienda tiene los más populares libros
+                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
                 <hr>
             </div>
 
         </div>
-    </div>
-    </div>
     </div>
 
     <!-- Footer  -->
@@ -369,7 +365,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-8">
                         <div class="footer-left">
-                            <a href="index.php">
+                            <a href="index.html">
                                 <img src="img/logo-2.png" alt="">
                             </a>
                             <p>Nuestra libreria infantil tiene los mejores y más variados títulos del mercado.</p>
@@ -394,8 +390,8 @@
                         <div class="single-footer">
                             <h2 class="footer-title">información</h2>
                             <ul class="footer-list">
-                                <li><a href="#   ">Cuenta sueños</a></li>
-                                <li><a href="#    "  > Cotiza tus envíos</a></li>
+                                <li><a href="about.html">Cuenta sueños</a></li>
+                                <li><a href="#"> Cotiza tus envíos</a></li>
 
                                 <li><a href="#">Términos y Condiciones </a></li>
 
@@ -407,10 +403,10 @@
                         <div class="single-footer">
                             <h2 class="footer-title"> Mi cuenta</h2>
                             <ul class="footer-list">
-                                <li><a href="#   ">Mi cuenta</a></li>
-                                <li><a href="#   ">Login</a></li>
-                                
-                                <li><a href="#   ">Salir de tu cuenta</a></li>
+                                <li><a href="my-account.html">Mi cuenta</a></li>
+                                <li><a href="account.html">Login</a></li>
+                                <li><a href="cart.html">Mi carrito de compras</a></li>
+                                <li><a href="checkout.html">Salir de tu cuenta</a></li>
                             </ul>
                         </div>
                     </div>
@@ -429,15 +425,16 @@
                     <div class="col-md-3 col-sm-8">
                         <div class="single-footer footer-newsletter">
                             <h2 class="footer-title">Noticias</h2>
-                            <p >Recibe todas las novedades, descuentos en títulos, eventos, promociones, fechas importantes, premios y mucho más. </p>
+                            <p>Consectetur adipisicing elit se do eiusm od tempor incididunt ut labore et dolore magnas
+                                aliqua.</p>
 
 
 
                             <form action="#" method="post">
-                                <div class="er">
+                                <div>
                                     <input type="text" placeholder="email ">
+                                </div>
                                 <button class="btn btn-search btn-small" type="submit">SUBSCRIBETE</button>
-                                <button class="btn btn-search btn-small" type="submit">SUBSCRIBE</button>
                                 <i class="flaticon-networking"></i>
                             </form>
                             <ul class="social-icon">
@@ -483,10 +480,10 @@
     </footer>
     <!-- Footer fin -->
 
+
     <!-- js y jquery interno -->
     <script src="js/javascript.js">
     </script>
-
 
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
