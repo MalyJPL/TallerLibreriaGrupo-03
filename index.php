@@ -107,6 +107,7 @@
                                             <input type="submit" value="Iniciar Sesion" name="enter" />
                                         </form>
                                     </div>
+                                    
                                 </li>
 
                                 <li><a id="registro" href="#">REGISTRAR</a>

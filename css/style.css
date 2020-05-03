@@ -82,7 +82,7 @@ body {
 .header-logo > a {
   display: block;
 padding-bottom: 20px;
-animation: 0.8s ease-in-out 1.2s normal backwards 1 running fadeInUp;
+animation: 1.8s ease-in-out 1.8s normal backwards 1 running fadeInUp;
 }
 
 
@@ -186,7 +186,35 @@ nav #registroAdmin{
   display: none;
  
 }
-
+/* Formulario ingresar */
+/* 
+  nav #ingresar2 input{
+  background-color: #fffefe;
+  margin-bottom: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-left: 10px;
+  height: 30px;
+  }
+  
+  #ingresarbtn{
+   -moz-background:background-color 1s;
+  
+    }
+  
+    
+  #ingresarbtn:hover{
+    background-color: #aaf432;
+  
+  
+    }
+  
+  nav #ingresar2{
+    display: none;
+    padding-left: 15px;
+   
+  }    */
 
 
 
