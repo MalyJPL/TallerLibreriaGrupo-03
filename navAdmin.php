@@ -1,7 +1,15 @@
 <?php
 
 $usuarioActivo = false;
-$usuarioActivo = $_SESSION['loggedin']; 
+if(isset($_SESSION['loggedin'])){
+    
+    
+    $usuarioActivo=$_SESSION['loggedin'];
+
+
+
+}
+
 
 
 if ($usuarioActivo== false){
