@@ -43,7 +43,7 @@ $_SESSION['user'];
 <body>
 
   <!--Header inicio-->
-  <div class="header-area">
+  <div class="barra">
     <div class="container">
       <div class="row">
         <div class="search">
@@ -53,18 +53,19 @@ $_SESSION['user'];
             </a>
           </div>
           <div class="layer-4">
-            <form action="#" class="title-4">
-              <input type="text" placeholder="¿Que libro esta buscando?">
-              <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-          </div>
-        </div>
-
-        <div class="col-md-19 col-sm-32 hidden-xs">
-          <div class="mainmenu">
-            <nav>
-              <ul id="nav">
-                <li><a href="index.html">INICIO</a></li>
+                        <form method="POST" action="control/productoControl.php?accion=buscarPorLetras" class="title-4">
+                            <input name="barraBusqueda" id="barraBusqueda" type="text" placeholder="¿Que libro esta buscando?">
+                            <button type="submit"><i class="fa fa-search"></i><img src="img/lu.png" alt=""width="20px"></button>
+                        </form>            
+                    </div>
+                </div>
+</div>
+<div class="row">
+                <div class="col-md-19 col-sm-32 hidden-xs">
+                    <div class="mainmenu">
+                        <nav>
+                            <ul id="nav">
+                                <li><a href="index.html">INICIO</a></li>
 
                 <!-- get -->
 
@@ -342,69 +343,122 @@ $_SESSION['user'];
 
   <!-- Banner Area inicio -->
   <div class="online-banner-area">
-    <div class="container">
-      <div class="banner-title text-center">
-        <h2>TIENDA DE LIBROS <span>EN LÍNEA </span></h2>
-        <p class="flaticon-shop"> Nuestra tienda tiene los más populares libros
-          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
-        <hr>
-      </div>
-
-    </div>
-  </div>
-
-
-  <!-- Footer  -->
-  <footer>
-    <div class="foo* action=" #" method="post">
-      <div>
-        <input type="text" placeholder="email ">
-      </div>
-      <button class="btn btn-search btn-small" type="submit">SUBSCRIBE</button>
-      <i class="flaticon-networking"></i>
-      </form>
-      <ul class="social-icon">
-        <li>
-          <a href="#">
-            <i class="flaticon-social"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="flaticon-social-1"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="flaticon-social-2"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="flaticon-video"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-    </div>
-
-    </div>
-    </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-md-6">
-            <div class="footer-bottom-right pull-right">
-              <img src="img/paypal.png" alt="">
+        <div class="container">
+            <div class="banner-title text-center">
+                <h2>TIENDA DE LIBROS <span>EN LÍNEA </span></h2>
+                <p class="flaticon-shop">Comprar libros online al mejor precio 2020 es más fácil que nunca. También te puede interesar ver libros recomendados, las novedades del último mes, de la última semana, los próximos lanzamientos, o nuestra página de eBooks o libros digitales.</p>
+                <hr>
             </div>
-          </div>
+
         </div>
-      </div>
     </div>
-  </footer>
-  <!-- Footer fin -->
+
+
+    <!-- Footer  -->
+    <footer>
+        <div class="footer-top-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-8">
+                        <div class="footer-left">
+                            <a href="index.php">
+                                <img src="img/logo-2.png" alt="">
+                            </a>
+                            <p>Nuestra libreria infantil tiene los mejores y más variados títulos del mercado.</p>
+                            <ul class="footer-contact">
+                                <li>
+                                    <i  class="flaticon-location"></i>
+                                    Calle 147 #07-70 Bogotá, Colombia
+                                </li>
+                                <li>
+                                    <i class="flaticon-technology"></i>
+                                    (+031) 2582030
+                                </li>
+                                <li>
+                                    <i class="flaticon-web"></i>
+                                    info@cuentasuenos.com.co
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <div class="single-footer">
+                            <h2 class="footer-title">información</h2>
+                            <ul class="footer-list">
+                                <li><a href="index.php">Cuenta sueños</a></li>
+                                <li><a href="#"> Cotiza tus envíos</a></li>
+
+                                <li><a href="#">Términos y Condiciones </a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2 hidden-sm">
+                        <div class="single-footer">
+                            <h2 class="footer-title"> Mi cuenta</h2>
+                            <ul class="footer-list">
+                                <li><a href="#  ">Mi cuenta</a></li>
+                                <li><a href="#   ">Login</a></li>
+                                <li><a href="#   ">Salir de tu cuenta</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2 hidden-sm">
+                        <div class="single-footer">
+                            <h2 class="footer-title">Nuestra libreria virtual</h2>
+                            <ul class="footer-list">
+                                <li><a href="#">Pedidos y devoluciones</a></li>
+                                <li><a href="#">Busqueda</a></li>
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-8">
+                        <div class="single-footer footer-newsletter">
+                            <h2 class="footer-title">Noticias</h2>
+                            <p>Recibe todas las novedades, descuentos en títulos, eventos, promociones, fechas importantes, premios y mucho más.</p>
+
+
+
+                            <form action="#" method="post">
+                                <div class="er">
+                                
+                                    <input type="text" placeholder="email ">
+                                </div>
+                                <button class="btn btn-search btn-small" type="submit">SUBSCRIBETE</button>
+                               
+                            </form>
+                            <ul >
+                                
+                                <a href="#"><img src="img/social.png" alt="" width="150px"></a>
+
+                               
+                              
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="footer-bottom-right pull-right">
+                            <img src="img/paypal.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer fin -->
 
   <!-- Bootstrap core JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

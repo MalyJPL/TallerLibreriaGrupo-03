@@ -17,6 +17,29 @@ h5{
 /*----------------------------------------*/
 
 
+.col-lg-12{
+
+
+  padding-top: 110px;
+  
+  }
+
+  .barra{
+
+    position: fixed;
+    
+    width: 100%;
+    
+    z-index: 100;
+    background-color: white;
+    
+    
+    }
+
+
+
+
+
 
 html, body {height: 100%;}
 .floatleft {float:left}
@@ -165,30 +188,37 @@ animation: 1.8s ease-in-out 1.8s normal backwards 1 running fadeInUp;
 }
 
 
-nav #registroAdmin input{
+/* Formulario registro */
+
+
+
+nav .registroAdmin input{
 background-color: #fffefe;
 margin-bottom: 10px;
-width: 240px;
+width: 200px;
 border: 1px solid #ccc;
 border-radius: 5px;
+padding: 10px;
+height: 30px;
+
 }
 
-#registrarbtn{
+.registrarbtn{
  -moz-background:background-color 1s;
   }
 
   
-#registrarbtn:hover{
-  background-color: #32b6f4;
+.registrarbtn:hover{
+  background-color:#aaf432;
   }
 
-nav #registroAdmin{
+nav .registroAdmin{
   display: none;
+  padding-left: 15px;
  
 }
-/* Formulario ingresar */
-/* 
-  nav #ingresar2 input{
+
+  /* nav #ingresar input{
   background-color: #fffefe;
   margin-bottom: 10px;
   width: 200px;
@@ -210,11 +240,11 @@ nav #registroAdmin{
   
     }
   
-  nav #ingresar2{
+  nav #ingresar {
     display: none;
     padding-left: 15px;
    
-  }    */
+  }     */
 
 
 
@@ -534,11 +564,44 @@ justify-content: space-between;
   border-color: -moz-use-text-color -moz-use-text-color #ffffff;
   border-image: none;
   border-style: none none solid;
-  border-width: medium medium 1px;
+  border-width: medium medium 2px;
   padding-bottom: 5px;
   padding-left: 25px;
   width: 100%;
 }
+
+
+.er{
+
+  background-color: rgb(183, 192, 209);
+  
+  margin-bottom: 10px;
+  width: 235px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-left: 10px;
+  height: 30px;
+  
+  
+  
+  
+  }
+
+
+  .banner-title span {
+    color: #32B5F3;
+  
+  }
+
+
+
+
+
+
+
+
+
+
 .single-footer.footer-newsletter > form {
   margin-bottom: 38px;
   overflow: hidden;
@@ -557,27 +620,9 @@ justify-content: space-between;
 .single-footer.footer-newsletter div {
   margin-bottom: 10px;
 }
-.social-icon a {
-  background: #d4d4d4 none repeat scroll 0 0;
-  border-radius: 50%;
-  color: #444444;
-  display: block;
-  height: 38px;
-  line-height: 38px;
-  text-align: center;
-  width: 38px;
-}
-.social-icon > li {
-  display: inline-block;
-  margin-right: 16px;
-}
-.social-icon > li:last-child {
-  margin-right: 0;
-}
-.social-icon a:hover {
-  background: #32b5f3 none repeat scroll 0 0;
-  color: #ffffff;
-}
+
+
+
 /*----------------------------------------*/
 /*  12.	Footer Bottom  CSS
 /*----------------------------------------*/

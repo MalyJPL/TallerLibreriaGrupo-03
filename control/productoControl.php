@@ -2,14 +2,12 @@
 
 require(__DIR__ . '/../modelo/class.Producto.php');
 
-listarProductosAdmin();
 
+pruebaImpresion();
+
+/* obtener accion de registro de producto */
 if (isset($_GET['accion'])) {
-
-
-    /* obtener accion de registro de producto */
     $accion = $_GET['accion'];
-
 
     /* poner funciones con switch segun accion */
     switch ($accion) {
@@ -27,11 +25,15 @@ if (isset($_GET['accion'])) {
         case 'buscarPorCategoriaTema': //index iprimir categoria tema
             buscarPorCategoriaTema();
             break;
-        case 'BuscarPorLetras': // index imprimir categoria letras
+        case 'buscarPorLetras': // index imprimir categoria letras
             buscarPorLetras();
             break;
     }
 }
+
+
+
+
 //crear producto
 function crearProducto()
 {
@@ -68,6 +70,8 @@ function listarProductosAdmin()
     $productos = $producto->mostrarProductos();
 
     if ($productos != 'error') {
+
+        //imprimir datos del usuario
 
         foreach ($productos as $productoEncontrado) {
 
@@ -148,3 +152,5 @@ function pruebaImpresion()
 //imprimir datos del producto en pagina producto
 // imprimir datos de busqueda según categoria en index
 //imprimir datos de búsqueda de producto según palabra ingresada en menú de búsqueda
+
+?>
