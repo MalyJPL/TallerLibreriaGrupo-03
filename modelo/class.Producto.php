@@ -76,9 +76,26 @@ public function mostrarProductos(){
    
     }
 
+    /* modificar producto / solo disponibles para usuario que lo registro*/
+    public function modificarProducto($id, $nombreLib, $autor, $precio, $descripcion, $imagen){
+      $db = new Conexion();
+      $sql = "UPDATE `producto` SET `nombre`='$nombreLib',`autor`='$autor',`precio`='$precio',`descripcion`='$descripcion',`imagen`='$imagen' WHERE `idProducto`='$id' ";
+      $db->query($sql) ? header('Location: ../producto.php?res=actualizado') : header('Location: ../producto.php?res=error'); 
+
+    }
 
   }
-/* modificar producto / solo disponibles para usuario que lo registro*/
+
+
+
+
+
+
+
+
+
+
+
 
 //buscar producto según categoria
 
