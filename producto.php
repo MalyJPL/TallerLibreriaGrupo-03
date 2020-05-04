@@ -1,35 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producto</title>
-</head>
-<body>
+
 
     <!-- NAVBAR -->
 
-     <!-- Imagen producto, descripcion, rpecio, etc. y link para ir a comprar -->
+    <!-- Imagen producto, descripcion, rpecio, etc. y link para ir a comprar -->
 
     <!-- carrusel con otros productos de la misma categoria -->
 
     <!-- FOOTER-->
-    
 
 
+<?php  
+$producto = new Producto();
+$usuario = $_GET['idRegistro'];
 
+$productos = $producto->mostrarProductos();
 
-    <div id="modificarAdmin">
+    <div id="modificarProducto">
         <form method="POST" action="control/productoControl.php?accion=actualizarProducto">
-            <div class="row" >
+            <div class="row">
             </div>
 
-            <div class="row my-4 mx-auto" id="espacioDatos">
+            <div class="row my-4 mx-auto">
                 <form class="mx-auto">
                     <div class="col-sm-12">
                         <div class="row">
-                            <input type="hidden" value="<?php echo $_SESSION['user']['idRegistro'];?>" name="idRegistro"
-                                id="idRegistro">
+                            <input type="hidden" value="<?php echo $_SESSION['user']['idProducto'];?>" name="idProducto"
+                                id="idProducto">
 
 
                             <div class="col-sm-12 form-group">
@@ -39,45 +35,39 @@
                             </div>
                             <br>
                             <div class="col-sm-12 form-group">
-                                <label>Apellido</label>
-                                <input type="text" value="<?php echo $_SESSION['user']['apellido'];?>" name="apellido"
-                                    id="apellido" placeholder="Apellido" />
+                                <label>Autor</label>
+                                <input type="text" value="<?php echo $_SESSION['user']['autor'];?>" name="autor"
+                                    id="autor" placeholder="Autor" />
                             </div>
                             <br>
                             <div class="col-sm-12 form-group">
-                                <label>Correo </label>
-                                <input type="text" value="<?php echo $_SESSION['user']['correo'];?>" name="correo"
-                                    id="correo" placeholder="Correo" />
+                                <label>Precio </label>
+                                <input type="text" value="<?php echo $_SESSION['user']['precio'];?>" name="precio"
+                                    id="precio" placeholder="Precio" />
                             </div>
                             <br>
                             <div class="col-sm-12 form-group">
-                                <label>Contraseña</label>
-                                <input type="password" value="<?php echo $_SESSION['user']['clave'];?>" name="clave"
-                                    id="clave" placeholder="Contraseña" />
+                                <label>Descripcion</label>
+                                <input type="text" value="<?php echo $_SESSION['user']['descripcion'];?>"
+                                    name="descripcion" id="descripcion" placeholder="Descripcion" />
                             </div>
                             <br>
                             <div class="col-sm-12 form-group">
-                                <label>Direccion </label>
-                                <input type="text" value="<?php echo $_SESSION['user']['direccion'];?>" name="direccion"
-                                    id="direccion" placeholder="Direccion" />
-                            </div>
-                            <br>
-                            <div class="col-sm-12 form-group">
-                                <label>Telefono</label>
-                                <input type="text" value="<?php echo $_SESSION['user']['telefono'];?>" name="telefono"
-                                    id="telefono" placeholder="Telefono" />
+                                <label>Imagen </label>
+                                <input type="text" value="<?php echo $_SESSION['user']['imagen'];?>" name="imagen"
+                                    id="imagen" placeholder="Imagen" />
                             </div>
                             <br>
                         </div>
                     </div>
             </div>
     </div>
-    <input type="submit" value="modificar" name="modificar"  style="background: #40acd7" class="btn btn-lg submit" id="modificarBoton"/>
+    <input type="submit" value="modificar" name="modificar" />
     </form>
     </form>
-    </div>
-    </div>
-   
+
+
+?>
 
 
 
@@ -91,7 +81,3 @@
 
 
 
-
-
-</body>
-</html>
