@@ -6,30 +6,34 @@ require(__DIR__ . '/../modelo/class.Producto.php');
 pruebaImpresion();
 
 /* obtener accion de registro de producto */
-$accion = $_GET['accion'];
-
-
+if(isset($_GET['accion'])){
+    $accion = $_GET['accion'];
+    
 /* poner funciones con switch segun accion */
-switch($accion){
-    case 'crearProducto':
-    crearProducto();
-    break;
-    case 'eliminarProducto': //usando funcion eliminar de clase producto. Tomando idProducto
-    eliminarProducto();
-    break;
-    case 'actualizarProducto'; //formulario que llena datos con datos de un producto dado el id
-    actualizarProducto();
-    case 'buscarPorCategoriaEdad': //index imprimir pero con restriccion de cateogria de edad que entra por GET
-    buscarPorCategoriaEdad();
-    break;
-    case 'buscarPorCategoriaTema': //index iprimir categoria tema
-    buscarPorCategoriaTema();
-    break;
-    case 'BuscarPorLetras': // index imprimir categoria letras
-    buscarPorLetras();
-    break;
-
+    switch($accion){
+        case 'crearProducto':
+        crearProducto();
+        break;
+        case 'eliminarProducto': //usando funcion eliminar de clase producto. Tomando idProducto
+        eliminarProducto();
+        break;
+        case 'actualizarProducto'; //formulario que llena datos con datos de un producto dado el id
+        actualizarProducto();
+        case 'buscarPorCategoriaEdad': //index imprimir pero con restriccion de cateogria de edad que entra por GET
+        buscarPorCategoriaEdad();
+        break;
+        case 'buscarPorCategoriaTema': //index iprimir categoria tema
+        buscarPorCategoriaTema();
+        break;
+        case 'buscarPorLetras': // index imprimir categoria letras
+        buscarPorLetras();
+        break;
+    
+    }
 }
+
+
+
 
 //crear producto
 function crearProducto(){
@@ -55,6 +59,7 @@ $libro->crearLibro($nombreLib, $autor, $precio, $descripcion, $dirImagen, $categ
 
 }
 
+<<<<<<< HEAD
 //imprimir datos del usuario
 
 
@@ -133,5 +138,7 @@ if($productos != 'error'){
 //imprimir datos del producto en pagina producto
 // imprimir datos de busqueda según categoria en index
 //imprimir datos de búsqueda de producto según palabra ingresada en menú de búsqueda
+=======
+>>>>>>> 384518c4ffffad156b78a574523a44844225176c
 
 ?>

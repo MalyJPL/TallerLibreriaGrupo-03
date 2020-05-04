@@ -59,15 +59,16 @@ function ingresar(){
     
 echo 'ingrese';
 
-    header('Location: ../perfil.php');
+    header('Location: ../index.php?res=ingreso');
     } else {
         echo 'Tus datos no son validos';
     }
     }
     
     function salir(){
+        $_SESSION['loggedin'] = false; 
         session_destroy(); 
-        header('Location: ../index.php');
+        header('Location: ../index.php?res=salida');
     }
     
     function modificar(){

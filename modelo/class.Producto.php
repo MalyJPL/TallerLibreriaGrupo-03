@@ -36,25 +36,60 @@ class Producto{
       $db->query($sql) ? header("Location: ../listaProductos.php?res=eliminado") : header("Location: ../listaProductos.php?res=error"); 
     }
 
+    public function buscarPorId($idProducto){
+      $db = new Conexion(); 
+      
+      $sql = "SELECT p.*, ce.*, ct.* FROM producto AS p INNER JOIN categoriaTema AS ct ON p.idCategoriaTema=ct.idCategoriaTema INNER JOIN categoriaEdad AS ce ON p.idCategoriaEdad=ce.idCategoriaEdad WHERE p.idProducto='$idProducto'";
+      $results = $db->query($sql);
+      if($results->num_rows > 0){
+        $row = mysqli_fetch_all($results);
+        return $row;
+     } else {
+         return 'error';
+     }
+    
+    }
+
     public function buscarPorCategoriaEdad($idCategoriaEdad){
       $db = new Conexion(); 
       
-      $sql = "SELECT p.*, ce.*, ct.* FROM producto AS p INNER JOIN categoriaTema AS ct ON p.idCategoriaTema=ct.idCategoriaTema INNER JOIN categoriaEdad AS ce ON p.idCategoriaEdad=ce.idCategoriaEdad WHERE p.idCategoriaEdad='$idCategoriaEdad'"
-      $db->query($sql) ? header("Location: ../index.php?res=Categoria") : header("Location: ../index.php?res=error"); 
+      $sql = "SELECT p.*, ce.*, ct.* FROM producto AS p INNER JOIN categoriaTema AS ct ON p.idCategoriaTema=ct.idCategoriaTema INNER JOIN categoriaEdad AS ce ON p.idCategoriaEdad=ce.idCategoriaEdad WHERE p.idCategoriaEdad='$idCategoriaEdad'";
+      $results = $db->query($sql);
+      if($results->num_rows > 0){
+        $row = mysqli_fetch_all($results);
+        return $row;
+     } else {
+         return 'error';
+     }
+    
     }
 
     public function buscarPorCategoriaTema($idCategoriaTema){
       $db = new Conexion(); 
       
-      $sql = "SELECT p.*, ce.*, ct.* FROM producto AS p INNER JOIN categoriaTema AS ct ON p.idCategoriaTema=ct.idCategoriaTema INNER JOIN categoriaEdad AS ce ON p.idCategoriaEdad=ce.idCategoriaEdad WHERE p.idCategoriaTema='$idCategoriaTema'"
-      $db->query($sql) ? header("Location: ../index.php?res=Categoria") : header("Location: ../index.php?res=error"); 
+      $sql = "SELECT p.*, ce.*, ct.* FROM producto AS p INNER JOIN categoriaTema AS ct ON p.idCategoriaTema=ct.idCategoriaTema INNER JOIN categoriaEdad AS ce ON p.idCategoriaEdad=ce.idCategoriaEdad WHERE p.idCategoriaTema='$idCategoriaTema'";
+     
+      $results = $db->query($sql);
+      if($results->num_rows > 0){
+        $row = mysqli_fetch_all($results);
+        return $row;
+     } else {
+         return 'error';
+     }
     }
 
     public function buscarPorLetras($letras){
       $db = new Conexion(); 
       
-      $sql = "SELECT p.*, ce.*, ct.* FROM producto AS p INNER JOIN categoriaTema AS ct ON p.idCategoriaTema=ct.idCategoriaTema INNER JOIN categoriaEdad AS ce ON p.idCategoriaEdad=ce.idCategoriaEdad WHERE p.nombre LIKE '%$letras%' OR p.autor LIKE '%$letras%' "
-      $db->query($sql) ? header("Location: ../index.php?res=barraBusqueda") : header("Location: ../index.php?res=error"); 
+      $sql = "SELECT p.*, ce.*, ct.* FROM producto AS p INNER JOIN categoriaTema AS ct ON p.idCategoriaTema=ct.idCategoriaTema INNER JOIN categoriaEdad AS ce ON p.idCategoriaEdad=ce.idCategoriaEdad WHERE p.nombre LIKE '%$letras%' OR p.autor LIKE '%$letras%' ";
+      $results = $db->query($sql);
+      if($results->num_rows > 0){
+        $row = mysqli_fetch_all($results);
+        return $row;
+     } else {
+         return 'error';
+     }
+      
     }
 
 

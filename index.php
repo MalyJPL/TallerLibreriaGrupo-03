@@ -1,3 +1,11 @@
+<?php
+// Activamos en esta pestaña la sesion de nuestro usuario
+session_start();
+if(isset($_SESSION['user'])){$_SESSION['user'];}
+
+?>
+
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -31,12 +39,12 @@
 
 
 
-    <!-- style css -->
-    <link rel="stylesheet" href="style.css">
+
+  
     <!-- responsive css -->
     <link rel="stylesheet" href="css/responsive.css">
 <!-- iconos css -->
-<link rel="stylesheet" href="css/iconos.css">
+
 
     <!-- ------------RIC   fin   ---- -->
 
@@ -48,7 +56,7 @@
 <body>
 
     <!--Header inicio-->
-    <div class="header-area">
+    <div class="barra">
         <div class="container">
             <div class="row">
                 <div class="search">
@@ -58,13 +66,14 @@
                         </a>
                     </div>
                     <div class="layer-4">
-                        <form action="#" class="title-4">
-                            <input type="text" placeholder="¿Que libro esta buscando?">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
+                        <form method="POST" action="control/busquedaControl.php?accion=buscarPorLetras" class="title-4">
+                            <input name="barraBusqueda" id="barraBusqueda" type="text" placeholder="¿Que libro esta buscando?">
+                            <button type="submit"><i class="fa fa-search"></i><img src="img/lu.png" alt=""width="20px"></button>
+                        </form>            
                     </div>
                 </div>
-
+</div>
+<div class="row">
                 <div class="col-md-19 col-sm-32 hidden-xs">
                     <div class="mainmenu">
                         <nav>
@@ -96,23 +105,26 @@
                                 </li>
                                 <li><a href="contact.html">CONTÁCTENOS</a></li>
 
-                                <li><a href="ingresar.html">INGRESAR</a>
-                                    <div id="ingresar">
+<!-----
+
+                                <li><a class="registro" href="#">INGRESAR</a>
+                                <ul class="sub-menu">
+                                    <div class="registroAdmin">
                                         <form method="POST" action="control/registroControl.php?accion=ingresar ">
                                             <input type="text" name="correo" id="correo" placeholder="Email" />
                                             <br>
                                             <input type="password" name="clave" id="clave"
                                                 placeholder="Contraseña" />
                                             <br>
-                                            <input type="submit" value="Iniciar Sesion" name="enter" />
+                                            <input type="submit" value="Iniciar Sesion"  class="registrarbtn" name="enter" />
                                         </form>
                                     </div>
-                                    
+                                    </ul>
                                 </li>
 
-                                <li><a id="registro" href="#">REGISTRAR</a>
+                                <li><a class="registro" href="#">REGISTRAR</a>
                                 <ul class="sub-menu">
-                                <div id="registroAdmin">
+                                <div class="registroAdmin">
                                     <form method="POST" action="control/registroControl.php?accion=registrar">
                                     <input type="text" name="nombre" id="nombre" placeholder="Nombre"/>
                                     <br>
@@ -126,7 +138,7 @@
                                     <br>
                                     <input type="text" name="telefono" id="telefono" placeholder="Telefono"/>
                                     <br>
-                                    <input type="submit" value="Registrar" id="registrarbtn"  name="registrar" />
+                                    <input type="submit" value="Registrar" class="registrarbtn"  name="registrar" />
                                     </form>
                                     </div>  
                                     </ul>
@@ -136,10 +148,14 @@
                                         <li><a href="sociales.html">Modificar usuarios</a></li>
                                         <li><a href="fantasia.html">Mis productos </a></li>
                                         <li><a href="imaginacion.html">Mi perfil</a></li>
-                                <?php
-                                include __DIR__ . 'navAdmin.php';
+                                    </ul>
+                                     
+                                </li>
+                               -->
+                            <?php
+                                include __DIR__ . '/navAdmin.php';
                                 ?>
-                            </ul>
+                                </div>
                         </nav>
                     </div>
                 </div>
@@ -342,17 +358,19 @@
 
     </div>
 
-
-
     <!-- ----------------Termina Camilo ------------------------- -->
+<div id=resultadosBusqueda>
+<?php
+include __DIR__ . '/control/busquedaControl.php'; 
+?>
+</div>
 
     <!-- Banner Area inicio -->
     <div class="online-banner-area">
         <div class="container">
             <div class="banner-title text-center">
                 <h2>TIENDA DE LIBROS <span>EN LÍNEA </span></h2>
-                <p class="flaticon-shop"> Nuestra tienda tiene los más populares libros
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
+                <p class="flaticon-shop">Comprar libros online al mejor precio 2020 es más fácil que nunca. También te puede interesar ver libros recomendados, las novedades del último mes, de la última semana, los próximos lanzamientos, o nuestra página de eBooks o libros digitales.</p>
                 <hr>
             </div>
 
@@ -366,13 +384,13 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-8">
                         <div class="footer-left">
-                            <a href="index.html">
+                            <a href="index.php">
                                 <img src="img/logo-2.png" alt="">
                             </a>
                             <p>Nuestra libreria infantil tiene los mejores y más variados títulos del mercado.</p>
                             <ul class="footer-contact">
                                 <li>
-                                    <i class="flaticon-location"></i>
+                                    <i  class="flaticon-location"></i>
                                     Calle 147 #07-70 Bogotá, Colombia
                                 </li>
                                 <li>
@@ -391,7 +409,7 @@
                         <div class="single-footer">
                             <h2 class="footer-title">información</h2>
                             <ul class="footer-list">
-                                <li><a href="about.html">Cuenta sueños</a></li>
+                                <li><a href="index.php">Cuenta sueños</a></li>
                                 <li><a href="#"> Cotiza tus envíos</a></li>
 
                                 <li><a href="#">Términos y Condiciones </a></li>
@@ -404,10 +422,9 @@
                         <div class="single-footer">
                             <h2 class="footer-title"> Mi cuenta</h2>
                             <ul class="footer-list">
-                                <li><a href="my-account.html">Mi cuenta</a></li>
-                                <li><a href="account.html">Login</a></li>
-                                <li><a href="cart.html">Mi carrito de compras</a></li>
-                                <li><a href="checkout.html">Salir de tu cuenta</a></li>
+                                <li><a href="#  ">Mi cuenta</a></li>
+                                <li><a href="#   ">Login</a></li>
+                                <li><a href="#   ">Salir de tu cuenta</a></li>
                             </ul>
                         </div>
                     </div>
@@ -426,39 +443,24 @@
                     <div class="col-md-3 col-sm-8">
                         <div class="single-footer footer-newsletter">
                             <h2 class="footer-title">Noticias</h2>
-                            <p>Consectetur adipisicing elit se do eiusm od tempor incididunt ut labore et dolore magnas
-                                aliqua.</p>
+                            <p>Recibe todas las novedades, descuentos en títulos, eventos, promociones, fechas importantes, premios y mucho más.</p>
 
 
 
                             <form action="#" method="post">
-                                <div>
+                                <div class="er">
+                                
                                     <input type="text" placeholder="email ">
                                 </div>
                                 <button class="btn btn-search btn-small" type="submit">SUBSCRIBETE</button>
-                                <i class="flaticon-networking"></i>
+                               
                             </form>
-                            <ul class="social-icon">
-                                <li>
-                                    <a href="#">
-                                        <i class="flaticon-social"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="flaticon-social-1"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="flaticon-social-2"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="flaticon-video"></i>
-                                    </a>
-                                </li>
+                            <ul >
+                                
+                                <a href="#"><img src="img/social.png" alt="" width="150px"></a>
+
+                               
+                              
                             </ul>
                         </div>
                     </div>
@@ -482,7 +484,7 @@
     <!-- Footer fin -->
 
 
-    <!-- js y jquery interno -->
+    <!-- js interno -->
     <script src="js/javascript.js">
     </script>
 
@@ -496,7 +498,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-
 
 
 
