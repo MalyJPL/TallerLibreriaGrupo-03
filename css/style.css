@@ -192,7 +192,7 @@ animation: 1.8s ease-in-out 1.8s normal backwards 1 running fadeInUp;
 
 
 
-nav #registroAdmin input{
+nav .registroAdmin input{
 background-color: #fffefe;
 margin-bottom: 10px;
 width: 200px;
@@ -203,23 +203,22 @@ height: 30px;
 
 }
 
-#registrarbtn{
+.registrarbtn{
  -moz-background:background-color 1s;
   }
 
   
-#registrarbtn:hover{
+.registrarbtn:hover{
   background-color:#aaf432;
   }
 
-nav #registroAdmin{
+nav .registroAdmin{
   display: none;
   padding-left: 15px;
  
 }
-/* Formulario ingresar */
-/* 
-  nav #ingresar2 input{
+
+  /* nav #ingresar input{
   background-color: #fffefe;
   margin-bottom: 10px;
   width: 200px;
@@ -241,11 +240,11 @@ nav #registroAdmin{
   
     }
   
-  nav #ingresar2{
+  nav #ingresar {
     display: none;
     padding-left: 15px;
    
-  }    */
+  }     */
 
 
 

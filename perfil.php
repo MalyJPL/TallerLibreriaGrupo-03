@@ -1,7 +1,9 @@
 <?php
 // Activamos en esta pestaña la sesion de nuestro usuario
 session_start();
+if( isset($_SESSION['user'])){
 $_SESSION['user'];
+}
 ?>
 
 <!DOCTYPE html>

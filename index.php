@@ -1,3 +1,10 @@
+<?php
+// Activamos en esta pestaña la sesion de nuestro usuario
+session_start();
+$_SESSION['user'];
+?>
+
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -64,7 +71,8 @@
                         </form>
                     </div>
                 </div>
-
+</div>
+<div class="row">
                 <div class="col-md-19 col-sm-32 hidden-xs">
                     <div class="mainmenu">
                         <nav>
@@ -96,26 +104,26 @@
                                 </li>
                                 <li><a href="contact.html">CONTÁCTENOS</a></li>
 
-<!------------------------------- Ingresar ---------------------------->
+<!-----
 
-                                <li><a href="#">INGRESAR</a>
+                                <li><a class="registro" href="#">INGRESAR</a>
                                 <ul class="sub-menu">
-                                    <div id="ingresar">
+                                    <div class="registroAdmin">
                                         <form method="POST" action="control/registroControl.php?accion=ingresar ">
                                             <input type="text" name="correo" id="correo" placeholder="Email" />
                                             <br>
                                             <input type="password" name="clave" id="clave"
                                                 placeholder="Contraseña" />
                                             <br>
-                                            <input type="submit" value="Iniciar Sesion" name="enter" />
+                                            <input type="submit" value="Iniciar Sesion"  class="registrarbtn" name="enter" />
                                         </form>
                                     </div>
                                     </ul>
                                 </li>
-<!------------------------------- Ingresar  FIN---------------------------->
-                                <li><a id="registro" href="#">REGISTRAR</a>
+
+                                <li><a class="registro" href="#">REGISTRAR</a>
                                 <ul class="sub-menu">
-                                <div id="registroAdmin">
+                                <div class="registroAdmin">
                                     <form method="POST" action="control/registroControl.php?accion=registrar">
                                     <input type="text" name="nombre" id="nombre" placeholder="Nombre"/>
                                     <br>
@@ -129,7 +137,7 @@
                                     <br>
                                     <input type="text" name="telefono" id="telefono" placeholder="Telefono"/>
                                     <br>
-                                    <input type="submit" value="Registrar" id="registrarbtn"  name="registrar" />
+                                    <input type="submit" value="Registrar" class="registrarbtn"  name="registrar" />
                                     </form>
                                     </div>  
                                     </ul>
@@ -139,10 +147,14 @@
                                         <li><a href="sociales.html">Modificar usuarios</a></li>
                                         <li><a href="fantasia.html">Mis productos </a></li>
                                         <li><a href="imaginacion.html">Mi perfil</a></li>
-                                <?php
-                                include __DIR__ . 'navAdmin.php';
+                                    </ul>
+                                     
+                                </li>
+                               -->
+                            <?php
+                                include __DIR__ . '/navAdmin.php';
                                 ?>
-                            </ul>
+                                </div>
                         </nav>
                     </div>
                 </div>
