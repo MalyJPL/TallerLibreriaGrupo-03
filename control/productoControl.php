@@ -59,7 +59,6 @@ $libro->crearLibro($nombreLib, $autor, $precio, $descripcion, $dirImagen, $categ
 
 }
 
-<<<<<<< HEAD
 //imprimir datos del usuario
 
 
@@ -138,7 +137,5 @@ if($productos != 'error'){
 //imprimir datos del producto en pagina producto
 // imprimir datos de busqueda según categoria en index
 //imprimir datos de búsqueda de producto según palabra ingresada en menú de búsqueda
-=======
->>>>>>> 384518c4ffffad156b78a574523a44844225176c
 
 ?>
