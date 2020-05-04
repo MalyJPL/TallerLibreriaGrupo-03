@@ -3,7 +3,7 @@
 require(__DIR__ . '/../modelo/class.Producto.php');
 
 
-pruebaImpresion();
+listarProductosAdmin();
 
 /* obtener accion de registro de producto */
 if (isset($_GET['accion'])) {
@@ -14,8 +14,8 @@ if (isset($_GET['accion'])) {
         case 'crearProducto':
             crearProducto();
             break;
-        case 'eliminarProducto': //usando funcion eliminar de clase producto. Tomando idProducto
-            eliminarProducto();
+        case 'borrar': //usando funcion eliminar de clase producto. Tomando idProducto
+            borrar();
             break;
         case 'actualizarProducto'; //formulario que llena datos con datos de un producto dado el id
             actualizarProducto();
@@ -32,7 +32,15 @@ if (isset($_GET['accion'])) {
 }
 
 
+function borrar()
+{
+    $libro = new Producto();
 
+    $idLib = $_GET['idProd'];
+
+
+    $libro->borrarLibro($idLib);
+}
 
 //crear producto
 function crearProducto()
@@ -76,7 +84,7 @@ function listarProductosAdmin()
         foreach ($productos as $productoEncontrado) {
 
             if ($productoEncontrado[9] == $usuario) {
-                echo $productoEncontrado[0];
+
 
                 echo '
                 <div class="col-lg-4 col-md-6 mb-4">

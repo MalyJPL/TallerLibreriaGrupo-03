@@ -32,7 +32,7 @@ class Producto
   }
 
 
-  public function eliminarLibro($idLibro)
+  public function borrarLibro($idLibro)
   {
     $db = new Conexion();
 
