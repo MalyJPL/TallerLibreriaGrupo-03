@@ -1,8 +1,14 @@
 
-let registro = document.getElementById('registro');
-let formRegistro = document.getElementById('registroAdmin');
+let registro = document.getElementsByClassName('registro');
+let formRegistro = document.getElementsByClassName('registroAdmin');
 
-registro.addEventListener('click', function(){
-formRegistro.style.display= 'block';
-console.log('entrar');
+
+registro[0].addEventListener('click', function(){
+formRegistro[0].style.display= 'block';
+
 }); 
+
+registro[1].addEventListener('click', function(){
+    formRegistro[1].style.display= 'block';
+    
+    }); 
