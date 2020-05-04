@@ -39,7 +39,7 @@ class Producto{
     public function buscarPorId($idProducto){
       $db = new Conexion(); 
       
-      $sql = "SELECT p.*, ce.*, ct.* FROM producto AS p INNER JOIN categoriaTema AS ct ON p.idCategoriaTema=ct.idCategoriaTema INNER JOIN categoriaEdad AS ce ON p.idCategoriaEdad=ce.idCategoriaEdad WHERE p.idProducto='$idProducto'"
+      $sql = "SELECT p.*, ce.*, ct.* FROM producto AS p INNER JOIN categoriaTema AS ct ON p.idCategoriaTema=ct.idCategoriaTema INNER JOIN categoriaEdad AS ce ON p.idCategoriaEdad=ce.idCategoriaEdad WHERE p.idProducto='$idProducto'";
       $results = $db->query($sql);
       if($results->num_rows > 0){
         $row = mysqli_fetch_all($results);
@@ -53,7 +53,7 @@ class Producto{
     public function buscarPorCategoriaEdad($idCategoriaEdad){
       $db = new Conexion(); 
       
-      $sql = "SELECT p.*, ce.*, ct.* FROM producto AS p INNER JOIN categoriaTema AS ct ON p.idCategoriaTema=ct.idCategoriaTema INNER JOIN categoriaEdad AS ce ON p.idCategoriaEdad=ce.idCategoriaEdad WHERE p.idCategoriaEdad='$idCategoriaEdad'"
+      $sql = "SELECT p.*, ce.*, ct.* FROM producto AS p INNER JOIN categoriaTema AS ct ON p.idCategoriaTema=ct.idCategoriaTema INNER JOIN categoriaEdad AS ce ON p.idCategoriaEdad=ce.idCategoriaEdad WHERE p.idCategoriaEdad='$idCategoriaEdad'";
       $results = $db->query($sql);
       if($results->num_rows > 0){
         $row = mysqli_fetch_all($results);
@@ -67,7 +67,7 @@ class Producto{
     public function buscarPorCategoriaTema($idCategoriaTema){
       $db = new Conexion(); 
       
-      $sql = "SELECT p.*, ce.*, ct.* FROM producto AS p INNER JOIN categoriaTema AS ct ON p.idCategoriaTema=ct.idCategoriaTema INNER JOIN categoriaEdad AS ce ON p.idCategoriaEdad=ce.idCategoriaEdad WHERE p.idCategoriaTema='$idCategoriaTema'"
+      $sql = "SELECT p.*, ce.*, ct.* FROM producto AS p INNER JOIN categoriaTema AS ct ON p.idCategoriaTema=ct.idCategoriaTema INNER JOIN categoriaEdad AS ce ON p.idCategoriaEdad=ce.idCategoriaEdad WHERE p.idCategoriaTema='$idCategoriaTema'";
      
       $results = $db->query($sql);
       if($results->num_rows > 0){
@@ -81,7 +81,7 @@ class Producto{
     public function buscarPorLetras($letras){
       $db = new Conexion(); 
       
-      $sql = "SELECT p.*, ce.*, ct.* FROM producto AS p INNER JOIN categoriaTema AS ct ON p.idCategoriaTema=ct.idCategoriaTema INNER JOIN categoriaEdad AS ce ON p.idCategoriaEdad=ce.idCategoriaEdad WHERE p.nombre LIKE '%$letras%' OR p.autor LIKE '%$letras%' "
+      $sql = "SELECT p.*, ce.*, ct.* FROM producto AS p INNER JOIN categoriaTema AS ct ON p.idCategoriaTema=ct.idCategoriaTema INNER JOIN categoriaEdad AS ce ON p.idCategoriaEdad=ce.idCategoriaEdad WHERE p.nombre LIKE '%$letras%' OR p.autor LIKE '%$letras%' ";
       $results = $db->query($sql);
       if($results->num_rows > 0){
         $row = mysqli_fetch_all($results);

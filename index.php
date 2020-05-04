@@ -58,7 +58,7 @@
                         </a>
                     </div>
                     <div class="layer-4">
-                        <form method="POST" action="control/productoControl.php?accion=buscarPorLetras" class="title-4">
+                        <form method="POST" action="control/busquedaControl.php?accion=buscarPorLetras" class="title-4">
                             <input name="barraBusqueda" id="barraBusqueda" type="text" placeholder="¿Que libro esta buscando?">
                             <button type="submit"><i class="fa fa-search"></i></button>
                         </form>
@@ -342,9 +342,12 @@
 
     </div>
 
-
-
     <!-- ----------------Termina Camilo ------------------------- -->
+<div id=resultadosBusqueda>
+<?php
+include __DIR__ . '/control/busquedaControl.php'; 
+?>
+</div>
 
     <!-- Banner Area inicio -->
     <div class="online-banner-area">
