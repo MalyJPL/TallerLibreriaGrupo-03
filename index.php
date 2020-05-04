@@ -1,9 +1,7 @@
 <?php
 // Activamos en esta pestaña la sesion de nuestro usuario
 session_start();
-if (isset($_SESSION['user'])){
-    $_SESSION['user'];
-}
+$_SESSION['user'];
 ?>
 
 
@@ -40,12 +38,12 @@ if (isset($_SESSION['user'])){
 
 
 
-    <!-- style css -->
-    <link rel="stylesheet" href="style.css">
+
+  
     <!-- responsive css -->
     <link rel="stylesheet" href="css/responsive.css">
 <!-- iconos css -->
-<link rel="stylesheet" href="css/iconos.css">
+
 
     <!-- ------------RIC   fin   ---- -->
 
@@ -69,8 +67,8 @@ if (isset($_SESSION['user'])){
                     <div class="layer-4">
                         <form method="POST" action="control/busquedaControl.php?accion=buscarPorLetras" class="title-4">
                             <input name="barraBusqueda" id="barraBusqueda" type="text" placeholder="¿Que libro esta buscando?">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
+                            <button type="submit"><i class="fa fa-search"></i><img src="img/lu.png" alt=""width="20px"></button>
+                        </form>            
                     </div>
                 </div>
 </div>
@@ -391,7 +389,7 @@ include __DIR__ . '/control/busquedaControl.php';
                             <p>Nuestra libreria infantil tiene los mejores y más variados títulos del mercado.</p>
                             <ul class="footer-contact">
                                 <li>
-                                    <i class="flaticon-location"></i>
+                                    <i  class="flaticon-location"></i>
                                     Calle 147 #07-70 Bogotá, Colombia
                                 </li>
                                 <li>
@@ -450,32 +448,18 @@ include __DIR__ . '/control/busquedaControl.php';
 
                             <form action="#" method="post">
                                 <div class="er">
+                                
                                     <input type="text" placeholder="email ">
                                 </div>
                                 <button class="btn btn-search btn-small" type="submit">SUBSCRIBETE</button>
-                                <i class="flaticon-networking"></i>
+                               
                             </form>
-                            <ul class="social-icon">
-                                <li>
-                                    <a href="#">
-                                        <i class="flaticon-social"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="flaticon-social-1"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="flaticon-social-2"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="flaticon-video"></i>
-                                    </a>
-                                </li>
+                            <ul >
+                                
+                                <a href="#"><img src="img/social.png" alt="" width="150px"></a>
+
+                               
+                              
                             </ul>
                         </div>
                     </div>
@@ -499,7 +483,7 @@ include __DIR__ . '/control/busquedaControl.php';
     <!-- Footer fin -->
 
 
-    <!-- js y jquery interno -->
+    <!-- js interno -->
     <script src="js/javascript.js">
     </script>
 
@@ -513,7 +497,6 @@ include __DIR__ . '/control/busquedaControl.php';
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-
 
 
 

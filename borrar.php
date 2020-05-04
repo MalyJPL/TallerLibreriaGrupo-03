@@ -4,6 +4,7 @@ session_start();
 $_SESSION['user'];
 ?>
 
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -18,9 +19,11 @@ $_SESSION['user'];
 
 
 
+
   <link href='https://fonts.googleapis.com/css?family=Poppins:400,700,600,500,300' rel='stylesheet' type='text/css'>
 
   <!--  css  -->
+
 
   <!-- Bootstrap core CSS  Camilo-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -34,7 +37,9 @@ $_SESSION['user'];
   <!-- responsive css -->
   <link rel="stylesheet" href="css/responsive.css">
 
+
   <!-- ------------RIC   fin   ---- -->
+
 
 
 
@@ -43,7 +48,7 @@ $_SESSION['user'];
 <body>
 
   <!--Header inicio-->
-  <div class="barra">
+  <div class="header-area">
     <div class="container">
       <div class="row">
         <div class="search">
@@ -52,7 +57,8 @@ $_SESSION['user'];
               <img src="img/logo.png" alt="" width="400px">
             </a>
           </div>
-          <div class="layer-4">
+
+           <div class="layer-4">
                         <form method="POST" action="control/productoControl.php?accion=buscarPorLetras" class="title-4">
                             <input name="barraBusqueda" id="barraBusqueda" type="text" placeholder="¿Que libro esta buscando?">
                             <button type="submit"><i class="fa fa-search"></i><img src="img/lu.png" alt=""width="20px"></button>
@@ -87,6 +93,7 @@ $_SESSION['user'];
                     <li><a href="12.html">8 a 12 años </a></li>
 
 
+
                   </ul>
                 </li>
                 <li><a href="contact.html">CONTÁCTENOS</a></li>
@@ -94,6 +101,7 @@ $_SESSION['user'];
                 <li><a href="ingresar.html">INGRESAR</a></li>
 
                 <li><a href="registrar.html">REGISTRAR</a></li>
+
 
                 <li><a href="#">PERFIL </a>
                   <ul class="sub-menu">
@@ -114,7 +122,9 @@ $_SESSION['user'];
 
   <!-- ------------------- imagenes--------  Camilo---- -->
 
+
   <!-- Navigation  barra de navegacion -->
+
 
   <!-- contenido -->
   <div class="container">
@@ -123,11 +133,13 @@ $_SESSION['user'];
       <h1 class="col-lg-12  my-4">Productos</h1>
     </div>
     <div class="row">
+
+
       <div class="list-group col-md-6 col-lg-6">
         <a style="background:#40acd7" href=" #" class="list-group-item" id="registrar-p" onclick="regProducto()">Registrar Productos</a>
       </div>
       <div class="list-group col-lg-6 col-md-6">
-        <a href="#" class="list-group-item" id="modificar-p" onclick="modProducto()" action='control/productoControl.php?accion=crearProducto&idRegistro=<?php echo $_SESSION['user']['idRegistro'];?>'>Editar Productos</a>
+        <a href="#" class="list-group-item" id="modificar-p" onclick="modProducto()">Editar Productos</a>
       </div>
 
     </div>
@@ -193,13 +205,13 @@ $_SESSION['user'];
             </div>
             <input name="enter" type="submit" class="btn btn-lg submit" style="background: #40acd7 "> </input>
           </div>
-        </div>
       </form>
     </div>
 
-     <div class="row" id="productos-modificar">
-<!--       <div class="col-lg-12">
+    <!-- termina formulario de nuevos productos -->
 
+    <div class="row" id="productos-modificar">
+      <div class="col-lg-12">
         <div class="row my-4">
 
           <div class="col-lg-4 col-md-6 mb-4">
@@ -229,6 +241,7 @@ $_SESSION['user'];
                 </div>
               </div>
             </div>
+
 
           </div>
 
@@ -327,24 +340,36 @@ $_SESSION['user'];
 
         </div>
 
+
       </div>
- -->
- <?php
-include __DIR__ . '/control/productoControl.php'; 
-?>
 
 
     </div>
-    <!-- termina formulario de nuevos productos -->
-
   </div>
 
+  </div>
 
 
 
   <!-- ----------------Termina Camilo ------------------------- -->
 
   <!-- Para incluir la lista de productos según la base de datos -->
+
+  <div class="row" id="productos-modificar">
+    <div class="col-lg-12">
+      <?php
+      include __DIR__ . '/control/productoControl.php?id=' . $_SESSION['user']['idRegistro']; ?>;
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
 
 
   <!-- Banner Area inicio -->
@@ -360,8 +385,9 @@ include __DIR__ . '/control/productoControl.php';
     </div>
 
 
-    <!-- Footer  -->
-    <footer>
+
+  <!-- Footer  -->
+  <footer>
         <div class="footer-top-area">
             <div class="container">
                 <div class="row">
@@ -466,6 +492,10 @@ include __DIR__ . '/control/productoControl.php';
     </footer>
     <!-- Footer fin -->
 
+
+ <!-- js interno-->
+ <script src="js/javascript.js">
+
   <!-- Bootstrap core JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
   </script>
@@ -474,6 +504,7 @@ include __DIR__ . '/control/productoControl.php';
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
   <script src="js/script.js"></script>
+
 
 
 

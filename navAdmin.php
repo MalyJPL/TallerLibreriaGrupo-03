@@ -1,11 +1,8 @@
 <?php
 
 $usuarioActivo = false;
-if(isset($_SESSION['loggedin'])){
 $usuarioActivo = $_SESSION['loggedin']; 
-}else{
-    $usuarioActivo = false; 
-}
+
 
 if ($usuarioActivo== false){
     echo '
@@ -68,6 +65,17 @@ else if($usuarioActivo== true & $_SESSION['user']['idTipoAdmin']==2){
   <li><a href="control/registroControl.php?accion=salir">CERRAR SESION </a>
   </li>';
 }
+else if($usuarioActivo== true & $_SESSION['user']['idTipoAdmin']==2){
+  echo '<li><a href="#">PERFIL </a>
+      <ul class="sub-menu">
+          <li><a href="listaProductos.php">Mis productos </a></li>
+          <li><a href="perfil.php">Mi perfil</a></li>
+      </ul>
+  </li>
+  <li><a href="control/registroControl.php?accion=salir">CERRAR SESION </a>
+  </li>';
+}
+
 
 
   ?>

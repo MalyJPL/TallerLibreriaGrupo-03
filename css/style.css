@@ -620,27 +620,9 @@ justify-content: space-between;
 .single-footer.footer-newsletter div {
   margin-bottom: 10px;
 }
-.social-icon a {
-  background: #d4d4d4 none repeat scroll 0 0;
-  border-radius: 50%;
-  color: #444444;
-  display: block;
-  height: 38px;
-  line-height: 38px;
-  text-align: center;
-  width: 38px;
-}
-.social-icon > li {
-  display: inline-block;
-  margin-right: 16px;
-}
-.social-icon > li:last-child {
-  margin-right: 0;
-}
-.social-icon a:hover {
-  background: #32b5f3 none repeat scroll 0 0;
-  color: #ffffff;
-}
+
+
+
 /*----------------------------------------*/
 /*  12.	Footer Bottom  CSS
 /*----------------------------------------*/
