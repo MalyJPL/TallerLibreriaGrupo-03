@@ -61,7 +61,7 @@ if(isset($_SESSION['user'])){$_SESSION['user'];}
             <div class="row">
                 <div class="search">
                     <div class="header-logo">
-                        <a href="index.html">
+                        <a href="index.php">
                             <img src="img/logo.png" alt="" width="400px">
                         </a>
                     </div>
@@ -78,80 +78,30 @@ if(isset($_SESSION['user'])){$_SESSION['user'];}
                     <div class="mainmenu">
                         <nav>
                             <ul id="nav">
-                                <li><a href="index.html">INICIO</a></li>
+                                <li><a href="index.php">INICIO</a></li>
 
                                 <!-- get -->
 
+                                
                                 <li><a href="#">Por tema</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="sociales.html">Social y valores </a></li>
-                                        <li><a href="fantasia.html">Fantasía </a></li>
-                                        <li><a href="imaginacion.html">Imaginación </a></li>
-                                        <li><a href="pensamiento.html">Pensamiento lógico </a></li>
-                                        <li><a href="naturalista.html">Naturalista </a></li>
-                                        <li><a href="lenguaje.html">lenguaje </a></li>
+                                <ul class="sub-menu">
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaTema&tema=1">Social y valores </a></li>
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaTema&tema=2">Fantasía </a></li>
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaTema&tema=3">Imaginación </a></li>
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaTema&tema=4">Pensamiento lógico </a></li>
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaTema&tema=5">Naturalista </a></li>
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaTema&tema=6">lenguaje </a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Por edad</a>
                                     <ul class="sub-menu">
-                                        <li><a href="2.html">0 a 2 años </a></li>
-                                        <li><a href="6.html">3 a 6 años </a></li>
-                                        <li><a href="8.html">6 a 8 años </a></li>
-                                        <li><a href="12.html">8 a 12 años </a></li>
-
-
-
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaEdad&edad=1">0 a 2 años </a></li>
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaEdad&edad=2">3 a 6 años </a></li>
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaEdad&edad=3">6 a 8 años </a></li>
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaEdad&edad=4">8 a 12 años </a></li>
                                     </ul>
                                 </li>
                                 <li><a href="contact.html">CONTÁCTENOS</a></li>
-
-<!-----
-
-                                <li><a class="registro" href="#">INGRESAR</a>
-                                <ul class="sub-menu">
-                                    <div class="registroAdmin">
-                                        <form method="POST" action="control/registroControl.php?accion=ingresar ">
-                                            <input type="text" name="correo" id="correo" placeholder="Email" />
-                                            <br>
-                                            <input type="password" name="clave" id="clave"
-                                                placeholder="Contraseña" />
-                                            <br>
-                                            <input type="submit" value="Iniciar Sesion"  class="registrarbtn" name="enter" />
-                                        </form>
-                                    </div>
-                                    </ul>
-                                </li>
-
-                                <li><a class="registro" href="#">REGISTRAR</a>
-                                <ul class="sub-menu">
-                                <div class="registroAdmin">
-                                    <form method="POST" action="control/registroControl.php?accion=registrar">
-                                    <input type="text" name="nombre" id="nombre" placeholder="Nombre"/>
-                                    <br>
-                                    <input type="text" name="apellido" id="apellido" placeholder="Apellido"/>
-                                    <br>
-                                    <input type="text" name="correo" id="correo" placeholder="Correo"/>
-                                    <br>
-                                    <input type="password" name="clave" id="clave" placeholder="Contraseña"/>
-                                    <br>
-                                    <input type="text" name="direccion" id="direccion" placeholder="Direccion"/>
-                                    <br>
-                                    <input type="text" name="telefono" id="telefono" placeholder="Telefono"/>
-                                    <br>
-                                    <input type="submit" value="Registrar" class="registrarbtn"  name="registrar" />
-                                    </form>
-                                    </div>  
-                                    </ul>
-                                </li>
-                                <li><a href="#">PERFIL </a>
-                                    <ul class="sub-menu">
-                                        <li><a href="sociales.html">Modificar usuarios</a></li>
-                                        <li><a href="fantasia.html">Mis productos </a></li>
-                                        <li><a href="imaginacion.html">Mi perfil</a></li>
-                                    </ul>
-                                     
-                                </li>
-                               -->
                             <?php
                                 include __DIR__ . '/navAdmin.php';
                                 ?>
