@@ -3,6 +3,8 @@
 $usuarioActivo = false;
 if(isset($_SESSION['loggedin'])){
 $usuarioActivo = $_SESSION['loggedin']; 
+}else{
+    $usuarioActivo = false; 
 }
 
 if ($usuarioActivo== false){

@@ -17,11 +17,13 @@ if(isset($_GET['accion'])){
         break;
         case 'buscarPorLetras': // index imprimir categoria letras
          $results = buscarPorLetras();
-         mostrarFichasBuscadas($results);
         break;
     }
 }
 
+if(isset($results)){
+mostrarFichasBuscadas($results);
+}
 
 
 
