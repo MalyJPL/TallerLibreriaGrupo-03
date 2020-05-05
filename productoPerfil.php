@@ -2,6 +2,7 @@
 // Activamos en esta pestaña la sesion de nuestro usuario
 session_start();
 if(isset($_SESSION['user'])){$_SESSION['user'];}
+
 ?>
 
 <!doctype html>
@@ -18,34 +19,23 @@ if(isset($_SESSION['user'])){$_SESSION['user'];}
 
 
 
-
-    <link href=https://fonts.googleapis.com/css?family=Poppins:400,700,600,500,300" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins:400,700,600,500,300' rel='stylesheet' type='text/css'>
 
     <!--  css  -->
 
-
     <!-- Bootstrap core CSS  Camilo-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Custom styles for this template Camilo -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <!-- ------------fin ---- -->
 
     <!-- ------------RIC   inicio ---- -->
 
-
-
-
-  
     <!-- responsive css -->
     <link rel="stylesheet" href="css/responsive.css">
-<!-- iconos css -->
-
 
     <!-- ------------RIC   fin   ---- -->
-
 
 
 
@@ -53,8 +43,9 @@ if(isset($_SESSION['user'])){$_SESSION['user'];}
 
 <body>
 
+    
     <!--Header inicio-->
-    <div class="barra">
+    <div >
         <div class="container">
             <div class="row">
                 <div class="search">
@@ -64,7 +55,7 @@ if(isset($_SESSION['user'])){$_SESSION['user'];}
                         </a>
                     </div>
                     <div class="layer-4">
-                        <form method="POST" action="busqueda.php?accion=buscarPorLetras" class="title-4">
+                        <form method="POST" action="control/busquedaControl.php?accion=buscarPorLetras" class="title-4">
                             <input name="barraBusqueda" id="barraBusqueda" type="text" placeholder="¿Que libro esta buscando?">
                             <button type="submit"><i class="fa fa-search"></i><img src="img/lu.png" alt=""width="20px"></button>
                         </form>            
@@ -80,6 +71,7 @@ if(isset($_SESSION['user'])){$_SESSION['user'];}
 
                                 <!-- get -->
 
+                                
                                 <li><a href="#">Por tema</a>
                                 <ul class="sub-menu">
                                         <li><a href="busqueda.php?accion=buscarPorCategoriaTema&tema=1">Social y valores </a></li>
@@ -101,8 +93,7 @@ if(isset($_SESSION['user'])){$_SESSION['user'];}
                                 <li><a href="contact.html">CONTÁCTENOS</a></li>
                             <?php
                                 include __DIR__ . '/navAdmin.php';
-                              ?>  
-                                
+                                ?>
                                 </div>
                         </nav>
                     </div>
@@ -113,106 +104,78 @@ if(isset($_SESSION['user'])){$_SESSION['user'];}
 
     <!-- ------------------- imagenes--------  Camilo---- -->
 
-
     <!-- Navigation  barra de navegacion -->
 
- 
-
     <!-- contenido -->
-    <div class="container">
-    <div class="row">
-<?php
-require(__DIR__ . '/modelo/class.Producto.php'); 
+    <div class="container" style="position: relative">
+
+        <div class="row">
+
+        <?php
+            require(__DIR__ . '/modelo/class.Producto.php');
 
 
-/* obtener accion de registro de producto */
-if(isset($_GET['accion'])){
-    $accion = $_GET['accion'];
-    
-/* poner funciones con switch segun accion */
-    switch($accion){
-        case 'buscarPorCategoriaEdad': //index imprimir pero con restriccion de cateogria de edad que entra por GET
-        $results = buscarPorCategoriaEdad();
-        break;
-        case 'buscarPorCategoriaTema': //index iprimir categoria tema
-         $results = buscarPorCategoriaTema();
-        break;
-        case 'buscarPorLetras': // index imprimir categoria letras
-         $results = buscarPorLetras();
-        break;
-    }
-}
+            $idlibro = $_GET['idProd'];
+            
+            $libro = new Producto();
+            
+            $infoLibro = $libro->buscarPorId($idlibro);
+            
+        ?>
+            <!-- /.col-lg-3 -->
+      
+            <div class="col-lg-10 mx-auto border border-primary px-0">
+                <img class="card img-fluid w-70 mx-auto mt-3" style="max-width: 420px" src="<?php echo  $infoLibro[0][5] ?>" alt="">
+                <div class="card mt-4">
 
-if(isset($results)){
-mostrarFichasBuscadas($results);
-}
+                    <div class="card-body">
+                        <h3 class="card-title"><?php echo  $infoLibro[0][1] ?></h3>
+                        <h4><?php echo  $infoLibro[0][3] ?></h4>
+                        <h4>Autor: <?php echo  $infoLibro[0][2] ?></h4>
+                        <h4>Tema: <?php echo  $infoLibro[0][14] ?></h4>
+                        <h4>Precio: <?php echo  $infoLibro[0][3] ?></h4>
+                    </div>
+                </div>
+                <!-- /.card -->
 
-function buscarPorCategoriaEdad(){
-  $busqueda = new Producto(); 
-  $idCategoriaEdad = $_GET['edad'];
-$results = $busqueda->buscarPorCategoriaEdad($idCategoriaEdad);
+                <div class="card card-outline-secondary">
+                    <div class="card-header">
+                        Descripción
+                    </div>
+                    <div class="card-body">
+                        <p><?php echo  $infoLibro[0][4] ?></p>
 
-return $results;
-}
+                    </div>
+                </div>
+                <!-- /.card -->
 
-function buscarPorCategoriaTema(){
-  $busqueda = new Producto(); 
-  $idCategoriaTema = $_GET['tema'];
-$results = $busqueda->buscarPorCategoriaTema($idCategoriaTema);
+            </div>
+            <!-- /.col-lg-9 -->
 
-return $results;
-}
+        </div>
 
-//Buscar por letras----
-
-function buscarPorLetras(){
-$letras = $_POST['barraBusqueda'];
-
-$busqueda = new Producto(); 
-
-$results = $busqueda->buscarPorLetras($letras);
-
-return $results;
-};
-
-
-function mostrarFichasBuscadas($results){
-
-    if ($results != 'error') {
-
-        foreach($results as $productoEncontrado){
-        
-          echo '
-<div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-          <a href="productoPerfil.php?idProd=' . $productoEncontrado[0] . '"><img class="card-img-top" src="' . $productoEncontrado[5] . '" alt="' . $productoEncontrado[2] . '"></a>
-          <div class="card-body">
-              <h4 class="card-title">
-                  <a href="#">Inventoras y sus inventos</a>
-              </h4>
-              <h5>  "Autor:" '  .  $productoEncontrado[2] . ' </h5>
-              <h5>  "Edad:" ' . $productoEncontrado[11] . '</h5>
-              <h5> "Tema:" ' . $productoEncontrado[14] . ' </h5>
-          </div>
-          <div class="card-footer">
-              <h5 class="text-muted"> "Precio:"' . $productoEncontrado[3] . '</h5>
-          </div>
-      </div>
-</div>';
-  
-        }
-    } else {
-        echo 'No hay productos disponibles con su criterio de búsqueda';
-    }
-
-
-};
-
-?>
-    
-    </div>
     </div>
 
+    <!-- ----------------Termina Camilo ------------------------- -->
+
+    <!-- Para incluir la lista de productos según la base de datos -->
+
+
+    <!-- Banner Area inicio -->
+    <div class="online-banner-area">
+        <div class="container">
+            <div class="banner-title text-center">
+                <h2>TIENDA DE LIBROS <span>EN LÍNEA </span></h2>
+                <p class="flaticon-shop">Comprar libros online al mejor precio 2020 es más fácil que nunca. También te puede interesar ver libros recomendados, las novedades del último mes, de la última semana, los próximos lanzamientos, o nuestra página de eBooks o libros digitales.</p>
+                <hr>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Footer  -->
+   
     <!-- Footer  -->
     <footer>
         <div class="footer-top-area">
@@ -324,16 +287,15 @@ function mostrarFichasBuscadas($results){
     <script src="js/javascript.js">
     </script>
 
+
     <!-- Bootstrap core JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <script src="js/script.js"></script>
 
 
 
@@ -342,6 +304,4 @@ function mostrarFichasBuscadas($results){
 
 </body>
 
-</html>';
-
-?>
+</html>

@@ -181,7 +181,35 @@ if(isset($_SESSION['user'])){$_SESSION['user'];}
 
                 <div class="row">
 
-                    <div class="col-lg-4 col-md-6 mb-4">
+                <?php
+                
+require(__DIR__ . '/modelo/class.Producto.php'); 
+                $busqueda = new Producto(); 
+$results = $busqueda->mostrarProductos();
+foreach($results as $productoEncontrado){
+        
+    echo '
+<div class="col-lg-4 col-md-6 mb-4">
+  <div class="card h-100">
+    <a href="productoPerfil.php?idProd=' . $productoEncontrado[0] . '"><img class="card-img-top" src="' . $productoEncontrado[5] . '" alt="' . $productoEncontrado[2] . '"></a>
+    <div class="card-body">
+        <h4 class="card-title">
+            <a href="#">Inventoras y sus inventos</a>
+        </h4>
+        <h5>  "Autor:" '  .  $productoEncontrado[2] . ' </h5>
+        <h5>  "Edad:" ' . $productoEncontrado[11] . '</h5>
+        <h5> "Tema:" ' . $productoEncontrado[14] . ' </h5>
+    </div>
+    <div class="card-footer">
+        <h5 class="text-muted"> "Precio:"' . $productoEncontrado[3] . '</h5>
+    </div>
+</div>
+</div>';
+
+  }
+
+?>
+                    <!-- <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
                             <a href="#"><img class="card-img-top" src="files/inventoras.jpg" alt="Recomendado 1"></a>
                             <div class="card-body">
@@ -295,7 +323,7 @@ if(isset($_SESSION['user'])){$_SESSION['user'];}
 
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
 
@@ -309,11 +337,7 @@ if(isset($_SESSION['user'])){$_SESSION['user'];}
     </div>
 
     <!-- ----------------Termina Camilo ------------------------- -->
-<div id=resultadosBusqueda>
-<?php
-include __DIR__ . '/control/busquedaControl.php'; 
-?>
-</div>
+
 
     <!-- Banner Area inicio -->
     <div class="online-banner-area">
