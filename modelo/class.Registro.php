@@ -13,6 +13,11 @@ require(__DIR__ . '/../config/class.Conexion.php');
 
 class Registro{
 
+
+
+
+
+
     public function __construct(){
 
     }
@@ -45,7 +50,32 @@ class Registro{
       $db->query($sql) ? header('Location: ../perfil.php?res=modificado') : header('Location: ../perfil.php?res=error'); 
 
     }
+
+
+
+    public function usuarios(){
+      $db = new Conexion();
+
+      $sql = "SELECT * FROM registro ";
+      
+      $result = $db->query($sql);  
+      if($result->num_rows > 0 ){
+         $row = $result -> fetch_assoc();  
+         return $row;
+      }else {
+          return 'error';  
+      }
+
+
+
+
+
+
 }
+
+
+
+
 
 
 

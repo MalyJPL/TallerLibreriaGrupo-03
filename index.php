@@ -207,7 +207,7 @@ if(isset($_SESSION['user'])){$_SESSION['user'];}
                                 <h4 class="card-title">
                                     <a href="#">Conejo el mentiroso</a>
                                 </h4>
-                                <h5>Autor: afdasd</h5>
+                                <h5>Autor: Arturo Rojas</h5>
                                 <h5>Edad: 6 a 8 años</h5>
                                 <h5>Tema: Imaginación</h5>
 
