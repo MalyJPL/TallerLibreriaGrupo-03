@@ -66,7 +66,7 @@ if(isset($_SESSION['user'])){$_SESSION['user'];}
                         </a>
                     </div>
                     <div class="layer-4">
-                        <form method="POST" action="control/busquedaControl.php?accion=buscarPorLetras" class="title-4">
+                        <form method="POST" action="busqueda.php?accion=buscarPorLetras" class="title-4">
                             <input name="barraBusqueda" id="barraBusqueda" type="text" placeholder="¿Que libro esta buscando?">
                             <button type="submit"><i class="fa fa-search"></i><img src="img/lu.png" alt=""width="20px"></button>
                         </form>            
@@ -101,7 +101,7 @@ if(isset($_SESSION['user'])){$_SESSION['user'];}
                                         <li><a href="busqueda.php?accion=buscarPorCategoriaEdad&edad=4">8 a 12 años </a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">CONTÁCTENOS</a></li>
+                                <li><a href="#contacto">CONTÁCTENOS</a></li>
                             <?php
                                 include __DIR__ . '/navAdmin.php';
                                 ?>
@@ -194,7 +194,7 @@ foreach($results as $productoEncontrado){
     <a href="productoPerfil.php?idProd=' . $productoEncontrado[0] . '"><img class="card-img-top" src="' . $productoEncontrado[5] . '" alt="' . $productoEncontrado[2] . '"></a>
     <div class="card-body">
         <h4 class="card-title">
-            <a href="#">Inventoras y sus inventos</a>
+            <a href="#">' . $productoEncontrado[1] . '</a>
         </h4>
         <h5>  "Autor:" '  .  $productoEncontrado[2] . ' </h5>
         <h5>  "Edad:" ' . $productoEncontrado[11] . '</h5>
@@ -353,7 +353,7 @@ foreach($results as $productoEncontrado){
 
     <!-- Footer  -->
     <footer>
-        <div class="footer-top-area">
+        <div id="contacto" class="footer-top-area">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-8">

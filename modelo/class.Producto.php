@@ -13,14 +13,14 @@ class Producto
 
 
   /* agregar producto */
-  public function crearLibro($nombreLib, $autor, $precio, $descripcion, $imagen, $idCategoriaEdad, $idCategoriaTema,  $idRegistro,  $idEstado)
-  {
-    $db = new Conexion();
-
-    $sql = "INSERT INTO producto(nombre, autor, precio, descripcion, imagen, idCategoriaEdad, idCategoriaTema, idRegistro, idEstado) VALUES ('$nombreLib', '$autor', '$precio', '$descripcion', '$imagen', '$idCategoriaEdad', '$idCategoriaTema', '$idRegistro', '$idEstado')";
-
-    $db->query($sql) ? header("Location: ../listaProductos.php?res=registrado") : header("Location: ../listaProductos.php?res=error");
-  }
+/* agregar producto */
+public function crearLibro($nombreLib, $autor, $precio, $descripcion, $imagen, $idCategoriaEdad, $idCategoriaTema,  $idRegistro,  $idEstado){
+  $db = new Conexion(); 
+  
+  $sql = "INSERT INTO producto(nombre, autor, precio, descripcion, imagen, idCategoriaEdad, idCategoriaTema, idRegistro, idEstado) VALUES ('$nombreLib', '$autor', '$precio', '$descripcion', '$imagen', '$idCategoriaEdad', '$idCategoriaTema', '$idRegistro', '$idEstado')";
+  
+  $db->query($sql) ? header("Location: ../listaProductos.php?res=registrado") : header("Location: ../listaProductos.php?res=error"); 
+}
 
   public function modificarLibro($idLibro, $nombreLib, $autor, $precio, $descripcion, $imagen, $idCategoriaEdad, $idCategoriaTema,  $idRegistro,  $idEstado)
   {

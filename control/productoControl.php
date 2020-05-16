@@ -5,31 +5,23 @@ require(__DIR__ . '/../modelo/class.Producto.php');
 
 listarProductosAdmin();
 
-/* obtener accion de registro de producto */
-if (isset($_GET['accion'])) {
-    $accion = $_GET['accion'];
-
     /* poner funciones con switch segun accion */
-    switch ($accion) {
-        case 'crearProducto':
-            crearProducto();
-            break;
-        case 'borrar': //usando funcion eliminar de clase producto. Tomando idProducto
-            borrar();
-            break;
-        case 'actualizarProducto'; //formulario que llena datos con datos de un producto dado el id
-            actualizarProducto();
-        case 'buscarPorCategoriaEdad': //index imprimir pero con restriccion de cateogria de edad que entra por GET
-            buscarPorCategoriaEdad();
-            break;
-        case 'buscarPorCategoriaTema': //index iprimir categoria tema
-            buscarPorCategoriaTema();
-            break;
-        case 'buscarPorLetras': // index imprimir categoria letras
-            buscarPorLetras();
-            break;
+    if (isset($_GET['accion'])) {
+        $accion = $_GET['accion'];
+    
+        /* poner funciones con switch segun accion */
+        switch ($accion) {
+            case 'crearProducto':
+                crearProducto();
+                break;
+            case 'borrar': //formulario que llena datos con datos de un producto dado el id
+                borrar();
+                break;  
+            case 'modificarProducto': //formulario que llena datos con datos de un producto dado el id
+                modificarProducto();
+                break;
+        }
     }
-}
 
 
 function borrar()
@@ -43,11 +35,10 @@ function borrar()
 }
 
 //crear producto
-function crearProducto()
-{
+function crearProducto(){
 
-    $libro = new Producto();
-
+    $libro = new Producto();  
+    
     $nombreLib = $_POST['nombreLib'];
     $autor = $_POST['autor'];
     $categoriaEdad = $_POST['idCategoriaEdad'];
@@ -56,15 +47,16 @@ function crearProducto()
     $precio = $_POST['precio'];
     $idRegistro = $_POST['idRegistro'];
     $idEstado = $_POST['idEstado'];
-
+    
     $imagen = $_FILES['imagen']['name'];
-    $carpeta = "../files/";
+    $carpeta = "files/";
     opendir($carpeta); #abrimos la carpeta donde queremos guardar los archivos
     $dirImagen = $carpeta . $imagen; #camputaramosla img / files /impagen.png
     move_uploaded_file($_FILES['imagen']['tmp_name'], $dirImagen);
-
+    
     $libro->crearLibro($nombreLib, $autor, $precio, $descripcion, $dirImagen, $categoriaEdad, $categoriaTema,  $idRegistro, $idEstado);
-}
+    
+    }
 
 //imprimir datos del usuario
 
@@ -131,28 +123,33 @@ function listarProductosAdmin()
     }
 }
 
+function modificarProducto(){
+    $producto= new Producto();
 
+$id = $_POST['idProducto'];
+$nombreLib = $_POST['nombre'];
+$autor = $_POST['autor'];
+$precio = $_POST['precio'];
+$descripcion = $_POST['descripcion'];
+$imagen = $_FILES['imagen']['name'];
+$carpeta = "../files/";
+opendir($carpeta);
+$dirImagen = $carpeta . $imagen;
+move_uploaded_file($_FILES['imagen']['tmp_name'], $dirImagen);
+$categoriaEdad = $_POST['categoriaEdad'];
+$categoriaTema = $_POST['categoriaTema'];
+$idRegistro = $_POST['idRegistro'];
+$idEstado = $_POST['idEstado'];
 
-function pruebaImpresion()
-{
-    echo "IMPRIME ALGO";
+$producto->modificarProducto($id, $nombreLib, $autor, $precio, $descripcion, $dirImagen, $categoriaEdad, $categoriaTema, $idRegistro, $idEstado);
 
-    $producto = new Producto();
-    $usuario = 1;
-
-    $productos = $producto->mostrarProductos();
-
-    if ($productos != 'error') {
-
-        foreach ($productos as $productoEncontrado) {
-
-            echo $productoEncontrado[2] . '<br>';
-        }
-    } else {
-
-        echo 'error';
-    }
 }
 ?>
 
 
+// modificar producto
+//imprimir datos del producto en pagina producto
+// imprimir datos de busqueda según categoria en index
+//imprimir datos de búsqueda de producto según palabra ingresada en menú de búsqueda
+
+?>

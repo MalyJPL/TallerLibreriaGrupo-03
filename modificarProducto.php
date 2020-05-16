@@ -1,12 +1,13 @@
-<?php
-// Activamos en esta pestaña la sesion de nuestro usuario
-session_start();
-if( isset($_SESSION['user'])){
-$_SESSION['user'];
-}
-?>
 
-<!DOCTYPE html>
+    <!-- NAVBAR -->
+
+    <!-- Imagen producto, descripcion, rpecio, etc. y link para ir a comprar -->
+
+    <!-- carrusel con otros productos de la misma categoria -->
+
+    <!-- FOOTER-->
+
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,21 +18,19 @@ $_SESSION['user'];
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins:400,700,600,500,300' rel='stylesheet' type='text/css'>
-
- <!-- Bootstrap core CSS  Camilo-->
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!-- Custom styles for this template Camilo -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
 </head>
+<script src="js/javascript.js">
+    </script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
 
-<body>
-
-    <!-- NAVBAR -->
-    <div class="barra">
+ <!-- NAVBAR -->
+ <div class="barra">
         <div class="container">
             <div class="row">
                 <div class="search">
@@ -87,83 +86,110 @@ $_SESSION['user'];
             </div>
         </div>
     </div>
+<br><br><br><br><br><br><br><br>
 
-    <!-- Datos del perfil registrado con boton para activar formulario para modificarlos -->
-
-    <!-- Formulario que estar'a oculto o sin imprimir, y qu tendra boton para guardar -->
-
-    <div id="contenedorPerfil">
-    <span id="bienvenido">
-        <?php if( isset($_SESSION['user'])){
-$_SESSION['user'];
-
-        echo "Bienvenid@" . $_SESSION['user']['nombre'] . "  " . $_SESSION['user']['apellido'];  ?>
-    </span>
+</html>
 
 
-    <div id="modificarAdmin">
-        <form method="POST" action="control/registroControl.php?accion=modificar">
+    <?php  
+
+
+require(__DIR__ . '/modelo/class.Producto.php'); 
+
+$producto = new Producto();
+
+
+$productosEscogido = $producto->buscarPorId(1);
+
+   echo '<div id="modificarProducto" >
+        <form method="POST" action="control/productoControl.php?accion=modificarProducto" >
             <div class="row" >
-                <h1 class="col-lg-5  my-4" style="background:#40acd7" id="perfilTitulo" id="registrar-p" >PERFIL</h1>
             </div>
 
-            <div class="row my-4 mx-auto" id="espacioDatos">
+            <div class="row my-4 mx-auto" id="espacioDatos" >
                 <form class="mx-auto">
                     <div class="col-sm-12">
                         <div class="row">
-                            <input type="hidden" value="<?php echo $_SESSION['user']['idRegistro'];?>" name="idRegistro"
-                                id="idRegistro">
-
-
+                         <br>
                             <div class="col-sm-12 form-group">
                                 <label>Nombre</label>
-                                <input type="text" value="<?php echo $_SESSION['user']['nombre'];?>" name="nombre"
+                                <input type="text" value="  ' . $productosEscogido[0][1] . ' " name="nombre"
                                     id="nombre" placeholder="Nombre" />
                             </div>
-                            <br>
                             <div class="col-sm-12 form-group">
-                                <label>Apellido</label>
-                                <input type="text" value="<?php echo $_SESSION['user']['apellido'];?>" name="apellido"
-                                    id="apellido" placeholder="Apellido" />
+                                <label>Autor</label>
+                                <input type="text" value="' . $productosEscogido[0][2] . '" name="autor"
+                                    id="autor" placeholder="Autor" />
                             </div>
-                            <br>
                             <div class="col-sm-12 form-group">
-                                <label>Correo </label>
-                                <input type="text" value="<?php echo $_SESSION['user']['correo'];?>" name="correo"
-                                    id="correo" placeholder="Correo" />
+                                <label>Precio </label>
+                                <input type="text" value="' . $productosEscogido[0][3] . '" name="precio"
+                                    id="precio" placeholder="Precio" />
                             </div>
-                            <br>
                             <div class="col-sm-12 form-group">
-                                <label>Contraseña</label>
-                                <input type="password" value="<?php echo $_SESSION['user']['clave'];?>" name="clave"
-                                    id="clave" placeholder="Contraseña" />
+                                <label>Descripcion</label>
+                                <input type="text" value="' . $productosEscogido[0][4] . '"
+                                    name="descripcion" id="descripcion" placeholder="Descripcion" />
                             </div>
-                            <br>
+                    
                             <div class="col-sm-12 form-group">
-                                <label>Direccion </label>
-                                <input type="text" value="<?php echo $_SESSION['user']['direccion'];?>" name="direccion"
-                                    id="direccion" placeholder="Direccion" />
+                                <label>Imagen </label>
+                                <input type="file" value="' . $productosEscogido[0][5] . ' " name="imagen"
+                                    id="imagen" placeholder="Imagen" />
                             </div>
-                            <br>
+                            
                             <div class="col-sm-12 form-group">
-                                <label>Telefono</label>
-                                <input type="text" value="<?php echo $_SESSION['user']['telefono'];?>" name="telefono"
-                                    id="telefono" placeholder="Telefono" />
+                                <label>categoriaEdad </label>
+                                <select type="text" value="' . $productosEscogido[0][6] . ' " name="categoriaEdad"
+                                    id="categoriaEdad" >
+                                    <option value="1" style="display:hidden">0 a 2 años</option>
+                              <option value="2">3 a 6 años</option>
+                              <option value="3">6 a 8 años</option>
+                              <option value="4">8 a 12 años</option>
+                              </select>
                             </div>
-                            <br>
+                            
+                            <div class="col-sm-12 form-group">
+                                <label>categoriaTema </label>
+                                <select type="text" value="' . $productosEscogido[0][7] . ' " name="categoriaTema"
+                                    id="categoriaTema" >
+                                    <option value="1"> Fantasia</option>
+                                    <option value="2"> Imaginación</option>
+                                    <option value="3"> Pensamiento Lógico</option>
+                                    <option value="4"> Social y valores</option>
+                                    <option value="5"> Naturalista</option>
+                                    <option value="6"> Lenguaje</option>
+                                  </select>
+                                    </div>
+                            
+                            <div class="col-sm-12 form-group">
+                                <label>idRegistro </label>
+                                <input type="text" value="' . $productosEscogido[0][8] . ' " name="idRegistro"
+                                    id="idRegistro" placeholder="idRegistro" />
+                            </div>
+                            
+                            <div class="col-sm-12 form-group">
+                                <label>idEstado </label>
+                                <input type="text" value="' . $productosEscogido[0][9] . ' " name="idEstado"
+                                    id="idEstado" placeholder="idEstado" />
+                            </div>
                         </div>
                     </div>
             </div>
     </div>
-    <input type="submit" value="modificar" name="modificar"  style="background: #40acd7" class="btn btn-lg submit" id="modificarBoton"/>
+    <input type="submit" value="modificar" name="modificar" id="modificar" style="background: #40acd7" class="btn btn-lg submit" />
     </form>
     </form>
-    </div>
-    </div>
     <br>
-    <a href="control/registroControl.php?accion=salir" style="background: #40acd7" class="btn btn-lg submit" id="cerrarSesion">Cerrar Sesion</a>
-<?php }  ?>
-    <!-- FOOTER -->
+    <br> ';
+
+   
+    
+
+?>
+
+
+<html>
      <!-- Footer  -->
   <footer>
         <div class="footer-top-area">
@@ -269,17 +295,14 @@ $_SESSION['user'];
         </div>
     </footer>
     <!-- Footer fin -->
-    <script src="js/javascript.js">
-    </script>
-  <!-- Bootstrap core JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
-  <script src="js/script.js"></script>
-
-</body>
-
 </html>
+
+
+
+
+
+
+
+
+
+

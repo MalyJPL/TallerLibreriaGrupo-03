@@ -188,7 +188,7 @@ function mostrarFichasBuscadas($results){
           <a href="productoPerfil.php?idProd=' . $productoEncontrado[0] . '"><img class="card-img-top" src="' . $productoEncontrado[5] . '" alt="' . $productoEncontrado[2] . '"></a>
           <div class="card-body">
               <h4 class="card-title">
-                  <a href="#">Inventoras y sus inventos</a>
+                  <a href="#">' . $productoEncontrado[1] . '</a>
               </h4>
               <h5>  "Autor:" '  .  $productoEncontrado[2] . ' </h5>
               <h5>  "Edad:" ' . $productoEncontrado[11] . '</h5>

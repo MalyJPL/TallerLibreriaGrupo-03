@@ -4,12 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de usuarios</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins:400,700,600,500,300' rel='stylesheet' type='text/css'>
+
+ <!-- Bootstrap core CSS  Camilo-->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this template Camilo -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-
-
-
 <body>
+
+    <!-- NAVBAR -->
+    <div class="barra">
+        <div class="container">
+            <div class="row">
+                <div class="search">
+                    <div class="header-logo">
+                        <a href="index.php">
+                            <img src="img/logo.png" alt="" width="400px">
+                        </a>
+                    </div>
+                    <div class="layer-4">
+                        <form method="POST" action="control/busquedaControl.php?accion=buscarPorLetras" class="title-4">
+                            <input name="barraBusqueda" id="barraBusqueda" type="text" placeholder="¿Que libro esta buscando?">
+                            <button type="submit"><i class="fa fa-search"></i><img src="img/lu.png" alt=""width="20px"></button>
+                        </form>            
+                    </div>
+                </div>
+</div>
+<div class="row">
+                <div class="col-md-19 col-sm-32 hidden-xs">
+                    <div class="mainmenu">
+                        <nav>
+                            <ul id="nav">
+                                <li><a href="index.php">INICIO</a></li>
+
+                                <!-- get -->
+
+                                
+                                <li><a href="#">Por tema</a>
+                                <ul class="sub-menu">
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaTema&tema=1">Social y valores </a></li>
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaTema&tema=2">Fantasía </a></li>
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaTema&tema=3">Imaginación </a></li>
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaTema&tema=4">Pensamiento lógico </a></li>
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaTema&tema=5">Naturalista </a></li>
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaTema&tema=6">lenguaje </a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Por edad</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaEdad&edad=1">0 a 2 años </a></li>
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaEdad&edad=2">3 a 6 años </a></li>
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaEdad&edad=3">6 a 8 años </a></li>
+                                        <li><a href="busqueda.php?accion=buscarPorCategoriaEdad&edad=4">8 a 12 años </a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">CONTÁCTENOS</a></li>
+                            <?php
+                                include __DIR__ . '/navAdmin.php';
+                                ?>
+                                </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -28,25 +96,11 @@ if ($usuarios != 'error') {
 
     foreach($usuarios as $usuario){
     
-      echo '
+      echo 'usuario' . $usuario[0]
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'<br>'
 
     }
 } else {
